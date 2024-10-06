@@ -1,0 +1,4122 @@
+version 2
+run canvas-0-20241004-11:33:06-12533
+attr configname canvas
+attr datetime 20241004-11:33:06
+attr experiment canvas
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 12533
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.visualizer.*.obstacleLossVisualizer.displayIntersections true
+param *.visualizer.*.obstacleLossVisualizer.displayFaceNormalVectors true
+param *.visualizer.*.obstacleLossVisualizer.intersectionLineColor "\"yellow\""
+param *.visualizer.*.mediumVisualizer.signalPropagationAnimationSpeed 500/3e8
+param *.visualizer.*.mediumVisualizer.signalTransmissionAnimationSpeed 50000/3e8
+param *.visualizer.*.mediumVisualizer.displaySignals true
+param *.visualizer.canvasVisualizer.mediumVisualizer.displaySignalDepartures false
+param *.visualizer.canvasVisualizer.mediumVisualizer.displaySignalArrivals false
+param *.visualizer.*.physicalLinkVisualizer.displayLinks true
+param *.visualizer.*.mobilityVisualizer.displayPositions true
+param *.visualizer.*.mobilityVisualizer.displayOrientations true
+param *.visualizer.*.mobilityVisualizer.displayVelocities true
+param *.visualizer.*.mobilityVisualizer.displayMovementTrails true
+param *.visualizer.*.mobilityVisualizer.moduleFilter "\"**.antenna.mobility\""
+param *.visualizer.osgVisualizer.typename "\"\""
+param *.node[*].numApps 1
+param *.node[*].app[0].typename "\"rondeboschtest.veins_inet.VeinsInetSampleApplication\""
+param *.node[*].app[0].interface "\"wlan0\""
+param *.node[*].wlan[0].opMode "\"p\""
+param *.node[*].wlan[0].radio.typename "\"Ieee80211DimensionalRadio\""
+param *.node[*].wlan[0].radio.bandName "\"5.9 GHz\""
+param *.node[*].wlan[0].radio.channelNumber 3
+param *.node[*].wlan[0].radio.transmitter.power 20mW
+param *.node[*].wlan[0].radio.bandwidth "10 MHz"
+param *.node[*].wlan[*].radio.antenna.mobility.typename "\"AttachedMobility\""
+param *.node[*].wlan[*].radio.antenna.mobility.mobilityModule "\"^.^.^.^.mobility\""
+param *.node[*].wlan[*].radio.antenna.mobility.offsetX -2.5m
+param *.node[*].wlan[*].radio.antenna.mobility.offsetZ 1.5m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinX 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxX 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinY 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxY 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinZ 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxZ 0m
+param *.node[*].ipv4.configurator.typename "\"HostAutoConfigurator\""
+param *.node[*].ipv4.configurator.interfaces "\"wlan0\""
+param *.node[*].ipv4.configurator.mcastGroups "\"224.0.0.1\""
+param *.node[*].mobility.typename "\"VeinsInetMobility\""
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"rondebosch.launchd.xml\")"
+param *.manager.moduleType "\"rondeboschtest.veins_inet.VeinsInetCar\""
+param *.physicalEnvironment.config "xmldoc(\"obstacles.xml\")"
+param *.radioMedium.obstacleLoss.typename "\"IdealObstacleLoss\""
+
+vector 0 Scenario.node[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Scenario.node[0].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 Scenario.node[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 3 Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 4 Scenario.node[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 Scenario.node[1].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 Scenario.node[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 8 Scenario.node[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 Scenario.node[2].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 10 Scenario.node[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 11 Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 12 Scenario.node[3].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 13 Scenario.node[3].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 14 Scenario.node[3].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 15 Scenario.node[3].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 16 Scenario.node[4].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 17 Scenario.node[4].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 18 Scenario.node[4].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 19 Scenario.node[4].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 20 Scenario.node[0].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 21 Scenario.node[0].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 22 Scenario.node[0].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 23 Scenario.node[0].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 24 Scenario.node[0].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 25 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 26 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 27 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 28 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 29 Scenario.node[0].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 30 Scenario.node[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 31 Scenario.node[0].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 32 Scenario.node[0].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 33 Scenario.node[0].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 34 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 35 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 36 Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 37 Scenario.node[0].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 38 Scenario.node[0].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 39 Scenario.node[0].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 40 Scenario.node[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 41 Scenario.node[0].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 42 Scenario.node[0].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 43 Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 44 Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 45 Scenario.node[4].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 46 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 47 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 48 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 49 Scenario.node[4].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 50 Scenario.node[4].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 51 Scenario.node[4].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 52 Scenario.node[4].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 53 Scenario.node[4].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 54 Scenario.node[4].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 55 Scenario.node[4].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 56 Scenario.node[4].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 57 Scenario.node[4].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 58 Scenario.node[4].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 59 Scenario.node[4].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 60 Scenario.node[4].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 61 Scenario.node[4].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 62 Scenario.node[4].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 63 Scenario.node[4].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 64 Scenario.node[2].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 65 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 66 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 67 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 68 Scenario.node[2].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 69 Scenario.node[2].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 70 Scenario.node[2].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 71 Scenario.node[2].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 72 Scenario.node[2].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 73 Scenario.node[2].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 74 Scenario.node[2].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 75 Scenario.node[2].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 76 Scenario.node[2].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 77 Scenario.node[2].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 78 Scenario.node[2].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 79 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 80 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 81 Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 82 Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 83 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 84 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 85 Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 86 Scenario.node[2].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 87 Scenario.node[2].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 88 Scenario.node[2].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 89 Scenario.node[2].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 90 Scenario.node[2].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 91 Scenario.node[2].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 92 Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 93 Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 94 Scenario.node[0].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 95 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 96 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 97 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 98 Scenario.node[0].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 99 Scenario.node[4].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 100 Scenario.node[4].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 101 Scenario.node[4].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 102 Scenario.node[4].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 103 Scenario.node[4].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 104 Scenario.node[4].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 105 Scenario.node[4].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 106 Scenario.node[4].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 107 Scenario.node[4].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 108 Scenario.node[4].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 109 Scenario.node[4].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 110 Scenario.node[3].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+15	2	0.1	15
+13	2	0.1	3
+12	2	0.1	0
+12	2	0.1	0
+12	2	0.1	2
+14	2	0.1	1
+110	640	0.1	0
+110	640	0.2	0
+110	640	0.3	0
+110	640	0.4	0
+110	640	0.5	0
+110	640	0.6	0
+110	640	0.7	0
+110	640	0.8	0
+110	640	0.9	0
+110	640	1	0
+110	640	1.1	0
+110	640	1.2	0
+110	640	1.3	0
+110	640	1.4	0
+110	640	1.5	0
+110	640	1.6	0
+110	640	1.7	0
+110	640	1.8	0
+110	640	1.9	0
+110	640	2	0
+110	640	2.1	0
+110	640	2.2	0
+110	640	2.3	0
+110	640	2.4	0
+110	640	2.5	0
+110	640	2.6	0
+110	640	2.7	0
+110	640	2.8	0
+110	640	2.9	0
+110	640	3	0
+110	640	3.1	0
+110	640	3.2	0
+110	640	3.3	0
+110	640	3.4	0
+110	640	3.5	0
+110	640	3.6	0
+110	640	3.7	0
+110	640	3.8	0
+110	640	3.9	0
+110	640	4	0
+110	640	4.1	0
+110	640	4.2	0
+110	640	4.3	0
+110	640	4.4	0
+110	640	4.5	0
+110	640	4.6	0
+110	640	4.7	0
+110	640	4.8	0
+110	640	4.9	0
+110	640	5	0
+110	640	5.1	0
+110	640	5.2	0
+110	640	5.3	0
+110	640	5.4	0
+110	640	5.5	0
+110	640	5.6	0
+110	640	5.7	0
+110	640	5.8	0
+110	640	5.9	0
+110	640	6	0
+110	640	6.1	0
+110	640	6.2	0
+110	640	6.3	0
+110	640	6.4	0
+110	640	6.5	0
+110	640	6.6	0
+110	640	6.7	0
+110	640	6.8	0
+110	640	6.9	0
+110	640	7	0
+110	640	7.1	0
+110	640	7.2	0
+110	640	7.3	0
+110	640	7.4	0
+110	640	7.5	0
+110	640	7.6	0
+110	640	7.7	0
+110	640	7.8	0
+110	640	7.9	0
+110	640	8	0
+110	640	8.1	0
+110	640	8.2	0
+110	640	8.3	0
+110	640	8.4	0
+110	640	8.5	0
+110	640	8.6	0
+110	640	8.7	0
+110	640	8.8	0
+110	640	8.9	0
+110	640	9	0
+110	640	9.1	0
+110	640	9.2	0
+110	640	9.3	0
+110	640	9.4	0
+110	640	9.5	0
+110	640	9.6	0
+110	640	9.7	0
+110	640	9.8	0
+110	640	9.9	0
+110	640	10	0
+110	640	10.1	0
+110	640	10.2	0
+110	640	10.3	0
+110	640	10.4	0
+110	640	10.5	0
+110	640	10.6	0
+110	640	10.7	0
+110	640	10.8	0
+110	640	10.9	0
+110	640	11	0
+110	640	11.1	0
+110	640	11.2	0
+110	640	11.3	0
+110	640	11.4	0
+110	640	11.5	0
+110	640	11.6	0
+110	640	11.7	0
+110	640	11.8	0
+110	640	11.9	0
+110	640	12	0
+110	640	12.1	0
+110	640	12.2	0
+110	640	12.3	0
+110	640	12.4	0
+110	640	12.5	0
+110	640	12.6	0
+110	640	12.7	0
+110	640	12.8	0
+110	640	12.9	0
+110	640	13	0
+110	640	13.1	0
+110	640	13.2	0
+110	640	13.3	0
+110	640	13.4	0
+110	640	13.5	0
+110	640	13.6	0
+110	640	13.7	0
+110	640	13.8	0
+110	640	13.9	0
+110	640	14	0
+110	640	14.1	0
+110	640	14.2	0
+110	640	14.3	0
+110	640	14.4	0
+110	640	14.5	0
+110	640	14.6	0
+110	640	14.7	0
+110	640	14.8	0
+110	640	14.9	0
+110	640	15	0
+110	640	15.1	0
+110	640	15.2	0
+110	640	15.3	0
+110	640	15.4	0
+110	640	15.5	0
+110	640	15.6	0
+110	640	15.7	0
+110	640	15.8	0
+110	640	15.9	0
+110	640	16	0
+110	640	16.1	0
+110	640	16.2	0
+110	640	16.3	0
+110	640	16.4	0
+110	640	16.5	0
+110	640	16.6	0
+110	640	16.7	0
+110	640	16.8	0
+110	640	16.9	0
+110	640	17	0
+110	640	17.1	0
+110	640	17.2	0
+110	640	17.3	0
+110	640	17.4	0
+110	640	17.5	0
+110	640	17.6	0
+110	640	17.7	0
+110	640	17.8	0
+110	640	17.9	0
+110	640	18	0
+110	640	18.1	0
+110	640	18.2	0
+110	640	18.3	0
+110	640	18.4	0
+110	640	18.5	0
+110	640	18.6	0
+110	640	18.7	0
+110	640	18.8	0
+110	640	18.9	0
+110	640	19	0
+110	640	19.1	0
+110	640	19.2	0
+110	640	19.3	0
+110	640	19.4	0
+110	640	19.5	0
+110	640	19.6	0
+110	640	19.7	0
+110	640	19.8	0
+110	640	19.9	0
+110	640	20	0
+110	640	20.1	0
+110	640	20.2	0
+110	640	20.3	0
+110	640	20.4	0
+110	640	20.5	0
+110	640	20.6	0
+110	640	20.7	0
+110	640	20.8	0
+110	640	20.9	0
+110	640	21	0
+110	640	21.1	0
+110	640	21.2	0
+110	640	21.3	0
+110	640	21.4	0
+110	640	21.5	0
+110	640	21.6	0
+110	640	21.7	0
+110	640	21.8	0
+110	640	21.9	0
+110	640	22	0
+110	640	22.1	0
+110	640	22.2	0
+110	640	22.3	0
+110	640	22.4	0
+110	640	22.5	0
+110	640	22.6	0
+110	640	22.7	0
+110	640	22.8	0
+110	640	22.9	0
+110	640	23	0
+110	640	23.1	0
+110	640	23.2	0
+110	640	23.3	0
+110	640	23.4	0
+110	640	23.5	0
+110	640	23.6	0
+110	640	23.7	0
+110	640	23.8	0
+110	640	23.9	0
+110	640	24	0
+110	640	24.1	0
+110	640	24.2	0
+110	640	24.3	0
+110	640	24.4	0
+110	640	24.5	0
+110	640	24.6	0
+110	640	24.7	0
+110	640	24.8	0
+110	640	24.9	0
+110	640	25	0
+110	640	25.1	0
+110	640	25.2	0
+110	640	25.3	0
+110	640	25.4	0
+110	640	25.5	0
+110	640	25.6	0
+110	640	25.7	0
+110	640	25.8	0
+110	640	25.9	0
+110	640	26	0
+110	640	26.1	0
+110	640	26.2	0
+110	640	26.3	0
+110	640	26.4	0
+110	640	26.5	0
+110	640	26.6	0
+110	640	26.7	0
+110	640	26.8	0
+110	640	26.9	0
+110	640	27	0
+110	640	27.1	0
+110	640	27.2	0
+110	640	27.3	0
+110	640	27.4	0
+110	640	27.5	0
+110	640	27.6	0
+110	640	27.7	0
+110	640	27.8	0
+110	640	27.9	0
+110	640	28	0
+110	640	28.1	0
+110	640	28.2	0
+110	640	28.3	0
+110	640	28.4	0
+110	640	28.5	0
+110	640	28.6	0
+110	640	28.7	0
+110	640	28.8	0
+110	640	28.9	0
+110	640	29	0
+110	640	29.1	0
+110	640	29.2	0
+110	640	29.3	0
+110	640	29.4	0
+110	640	29.5	0
+110	640	29.6	0
+110	640	29.7	0
+110	640	29.8	0
+110	640	29.9	0
+110	640	30	0
+110	640	30.1	0
+110	640	30.2	0
+110	640	30.3	0
+110	640	30.4	0
+110	640	30.5	0
+110	640	30.6	0
+110	640	30.7	0
+110	640	30.8	0
+110	640	30.9	0
+110	640	31	0
+110	640	31.1	0
+110	640	31.2	0
+110	640	31.3	0
+110	640	31.4	0
+110	640	31.5	0
+110	640	31.6	0
+110	640	31.7	0
+110	640	31.8	0
+110	640	31.9	0
+110	640	32	0
+110	640	32.1	0
+110	640	32.2	0
+110	640	32.3	0
+110	640	32.4	0
+110	640	32.5	0
+110	640	32.6	0
+110	640	32.7	0
+110	640	32.8	0
+110	640	32.9	0
+110	640	33	0
+110	640	33.1	0
+110	640	33.2	0
+110	640	33.3	0
+110	640	33.4	0
+110	640	33.5	0
+110	640	33.6	0
+110	640	33.7	0
+110	640	33.8	0
+110	640	33.9	0
+110	640	34	0
+110	640	34.1	0
+110	640	34.2	0
+110	640	34.3	0
+110	640	34.4	0
+110	640	34.5	0
+110	640	34.6	0
+110	640	34.7	0
+110	640	34.8	0
+110	640	34.9	0
+110	640	35	0
+110	640	35.1	0
+110	640	35.2	0
+110	640	35.3	0
+110	640	35.4	0
+110	640	35.5	0
+110	640	35.6	0
+110	640	35.7	0
+110	640	35.8	0
+110	640	35.9	0
+110	640	36	0
+110	640	36.1	0
+110	640	36.2	0
+110	640	36.3	0
+110	640	36.4	0
+110	640	36.5	0
+110	640	36.6	0
+110	640	36.7	0
+110	640	36.8	0
+110	640	36.9	0
+110	640	37	0
+110	640	37.1	0
+110	640	37.2	0
+110	640	37.3	0
+110	640	37.4	0
+110	640	37.5	0
+110	640	37.6	0
+110	640	37.7	0
+110	640	37.8	0
+110	640	37.9	0
+110	640	38	0
+110	640	38.1	0
+110	640	38.2	0
+110	640	38.3	0
+110	640	38.4	0
+110	640	38.5	0
+110	640	38.6	0
+110	640	38.7	0
+110	640	38.8	0
+110	640	38.9	0
+110	640	39	0
+110	640	39.1	0
+110	640	39.2	0
+110	640	39.3	0
+110	640	39.4	0
+110	640	39.5	0
+110	640	39.6	0
+110	640	39.7	0
+110	640	39.8	0
+110	640	39.9	0
+110	640	40	0
+110	640	40.1	0
+110	640	40.2	0
+110	640	40.3	0
+110	640	40.4	0
+110	640	40.5	0
+110	640	40.6	0
+110	640	40.7	0
+110	640	40.8	0
+110	640	40.9	0
+110	640	41	0
+110	640	41.1	0
+110	640	41.2	0
+110	640	41.3	0
+110	640	41.4	0
+110	640	41.5	0
+110	640	41.6	0
+110	640	41.7	0
+110	640	41.8	0
+110	640	41.9	0
+110	640	42	0
+110	640	42.1	0
+110	640	42.2	0
+110	640	42.3	0
+110	640	42.4	0
+110	640	42.5	0
+110	640	42.6	0
+110	640	42.7	0
+110	640	42.8	0
+110	640	42.9	0
+110	640	43	0
+110	640	43.1	0
+110	640	43.2	0
+110	640	43.3	0
+110	640	43.4	0
+110	640	43.5	0
+110	640	43.6	0
+110	640	43.7	0
+110	640	43.8	0
+110	640	43.9	0
+110	640	44	0
+110	640	44.1	0
+110	640	44.2	0
+110	640	44.3	0
+110	640	44.4	0
+110	640	44.5	0
+110	640	44.6	0
+110	640	44.7	0
+110	640	44.8	0
+110	640	44.9	0
+110	640	45	0
+110	640	45.1	0
+110	640	45.2	0
+110	640	45.3	0
+110	640	45.4	0
+110	640	45.5	0
+110	640	45.6	0
+110	640	45.7	0
+110	640	45.8	0
+110	640	45.9	0
+110	640	46	0
+110	640	46.1	0
+110	640	46.2	0
+110	640	46.3	0
+110	640	46.4	0
+110	640	46.5	0
+110	640	46.6	0
+110	640	46.7	0
+110	640	46.8	0
+110	640	46.9	0
+110	640	47	0
+110	640	47.1	0
+110	640	47.2	0
+110	640	47.3	0
+110	640	47.4	0
+110	640	47.5	0
+110	640	47.6	0
+110	640	47.7	0
+110	640	47.8	0
+110	640	47.9	0
+110	640	48	0
+110	640	48.1	0
+110	640	48.2	0
+110	640	48.3	0
+110	640	48.4	0
+110	640	48.5	0
+110	640	48.6	0
+110	640	48.7	0
+110	640	48.8	0
+110	640	48.9	0
+110	640	49	0
+110	640	49.1	0
+0	2	0.1	0
+0	2	0.1	0
+0	2	0.1	2
+0	236	20	3
+0	243	20.000152	2
+0	276	20.000314	3
+0	283	20.000466	2
+1	2	0.1	3
+2	2	0.1	1
+2	236	20	0
+2	243	20.000152	1
+2	276	20.000314	0
+2	283	20.000466	1
+2	302	20.000551289476	3
+2	308	20.000703289476	1
+2	326	20.000787629832	3
+2	332	20.000939629832	1
+3	2	0.1	15
+4	2	0.1	0
+4	2	0.1	0
+4	2	0.1	2
+5	2	0.1	3
+6	2	0.1	1
+7	2	0.1	15
+8	2	0.1	0
+8	2	0.1	0
+8	2	0.1	2
+8	300	20.000550644738	3
+8	307	20.000702644738	2
+9	2	0.1	3
+10	2	0.1	1
+10	239	20.000000644738	3
+10	258	20.000152644738	1
+10	279	20.000314644738	3
+10	290	20.000466644738	1
+10	300	20.000550644738	0
+10	307	20.000702644738	1
+10	327	20.000788116414	3
+10	338	20.000940116414	1
+11	2	0.1	15
+16	44	3.1	0
+16	44	3.1	0
+16	44	3.1	2
+16	324	20.000787380576	3
+16	331	20.000939380576	2
+17	44	3.1	3
+18	44	3.1	1
+18	238	20.000000249256	3
+18	244	20.000152249256	1
+18	278	20.000314249256	3
+18	284	20.000466249256	1
+18	303	20.000551380576	3
+18	314	20.000703380576	1
+18	324	20.000787380576	0
+18	331	20.000939380576	1
+19	44	3.1	15
+20	216	20	100
+20	225	20	100
+21	218	20	108
+21	226	20	108
+22	220	20	128
+22	228	20	128
+23	220	20	128
+23	228	20	128
+24	223	20	130
+24	231	20	130
+25	223	20	158
+25	231	20	158
+26	223	20	1
+26	231	20	2
+26	235	20	1
+26	235	20	0
+27	223	20	8
+27	242	20.000152	8
+28	223	20	1
+28	234	20	0
+28	243	20.000152	1
+28	274	20.000314	0
+29	224	20	108
+29	232	20	108
+29	312	20.000703289476	108
+29	336	20.000939629832	108
+30	224	20	1
+30	232	20	2
+30	312	20.000703289476	3
+30	336	20.000939629832	4
+31	225	20	100
+31	233	20	100
+31	313	20.000703289476	100
+31	337	20.000939629832	100
+32	225	0.1	0
+32	225	0.2	0
+32	225	0.3	0
+32	225	0.4	0
+32	225	0.5	0
+32	225	0.6	0
+32	225	0.7	0
+32	225	0.8	0
+32	225	0.9	0
+32	225	1	0
+32	225	1.1	0
+32	225	1.2	0
+32	225	1.3	0
+32	225	1.4	0
+32	225	1.5	0
+32	225	1.6	0
+32	225	1.7	0
+32	225	1.8	0
+32	225	1.9	0
+32	225	2	0
+32	225	2.1	0
+32	225	2.2	0
+32	225	2.3	0
+32	225	2.4	0
+32	225	2.5	0
+32	225	2.6	0
+32	225	2.7	0
+32	225	2.8	0
+32	225	2.9	0
+32	225	3	0
+32	225	3.1	0
+32	225	3.2	0
+32	225	3.3	0
+32	225	3.4	0
+32	225	3.5	0
+32	225	3.6	0
+32	225	3.7	0
+32	225	3.8	0
+32	225	3.9	0
+32	225	4	0
+32	225	4.1	0
+32	225	4.2	0
+32	225	4.3	0
+32	225	4.4	0
+32	225	4.5	0
+32	225	4.6	0
+32	225	4.7	0
+32	225	4.8	0
+32	225	4.9	0
+32	225	5	0
+32	225	5.1	0
+32	225	5.2	0
+32	225	5.3	0
+32	225	5.4	0
+32	225	5.5	0
+32	225	5.6	0
+32	225	5.7	0
+32	225	5.8	0
+32	225	5.9	0
+32	225	6	0
+32	225	6.1	0
+32	225	6.2	0
+32	225	6.3	0
+32	225	6.4	0
+32	225	6.5	0
+32	225	6.6	0
+32	225	6.7	0
+32	225	6.8	0
+32	225	6.9	0
+32	225	7	0
+32	225	7.1	0
+32	225	7.2	0
+32	225	7.3	0
+32	225	7.4	0
+32	225	7.5	0
+32	225	7.6	0
+32	225	7.7	0
+32	225	7.8	0
+32	225	7.9	0
+32	225	8	0
+32	225	8.1	0
+32	225	8.2	0
+32	225	8.3	0
+32	225	8.4	0
+32	225	8.5	0
+32	225	8.6	0
+32	225	8.7	0
+32	225	8.8	0
+32	225	8.9	0
+32	225	9	0
+32	225	9.1	0
+32	225	9.2	0
+32	225	9.3	0
+32	225	9.4	0
+32	225	9.5	0
+32	225	9.6	0
+32	225	9.7	0
+32	225	9.8	0
+32	225	9.9	0
+32	225	10	0
+32	225	10.1	0
+32	225	10.2	0
+32	225	10.3	0
+32	225	10.4	0
+32	225	10.5	0
+32	225	10.6	0
+32	225	10.7	0
+32	225	10.8	0
+32	225	10.9	0
+32	225	11	0
+32	225	11.1	0
+32	225	11.2	0
+32	225	11.3	0
+32	225	11.4	0
+32	225	11.5	0
+32	225	11.6	0
+32	225	11.7	0
+32	225	11.8	0
+32	225	11.9	0
+32	225	12	0
+32	225	12.1	0
+32	225	12.2	0
+32	225	12.3	0
+32	225	12.4	0
+32	225	12.5	0
+32	225	12.6	0
+32	225	12.7	0
+32	225	12.8	0
+32	225	12.9	0
+32	225	13	0
+32	225	13.1	0
+32	225	13.2	0
+32	225	13.3	0
+32	225	13.4	0
+32	225	13.5	0
+32	225	13.6	0
+32	225	13.7	0
+32	225	13.8	0
+32	225	13.9	0
+32	225	14	0
+32	225	14.1	0
+32	225	14.2	0
+32	225	14.3	0
+32	225	14.4	0
+32	225	14.5	0
+32	225	14.6	0
+32	225	14.7	0
+32	225	14.8	0
+32	225	14.9	0
+32	225	15	0
+32	225	15.1	0
+32	225	15.2	0
+32	225	15.3	0
+32	225	15.4	0
+32	225	15.5	0
+32	225	15.6	0
+32	225	15.7	0
+32	225	15.8	0
+32	225	15.9	0
+32	225	16	0
+32	225	16.1	0
+32	225	16.2	0
+32	225	16.3	0
+32	225	16.4	0
+32	225	16.5	0
+32	225	16.6	0
+32	225	16.7	0
+32	225	16.8	0
+32	225	16.9	0
+32	225	17	0
+32	225	17.1	0
+32	225	17.2	0
+32	225	17.3	0
+32	225	17.4	0
+32	225	17.5	0
+32	225	17.6	0
+32	225	17.7	0
+32	225	17.8	0
+32	225	17.9	0
+32	225	18	0
+32	225	18.1	0
+32	225	18.2	0
+32	225	18.3	0
+32	225	18.4	0
+32	225	18.5	0
+32	225	18.6	0
+32	225	18.7	0
+32	225	18.8	0
+32	225	18.9	0
+32	225	19	0
+32	225	19.1	0
+32	225	19.2	0
+32	225	19.3	0
+32	225	19.4	0
+32	225	19.5	0
+32	225	19.6	0
+32	225	19.7	0
+32	225	19.8	0
+32	225	19.9	0
+32	225	20	0
+33	225	20	0
+33	233	20	0
+33	313	20.000703289476	0.000703289476
+33	337	20.000939629832	0.000939629832
+34	235	20	158
+34	235	20	158
+35	235	20	0
+35	235	20	0
+36	235	20	1
+36	235	20	2
+36	242	20.000152	1
+36	282	20.000466	0
+37	235	20	12000000
+37	275	20.000314	12000000
+38	235	20	158
+38	275	20.000314	158
+39	235	20	1
+39	242	20.000152	0
+39	275	20.000314	1
+39	282	20.000466	0
+40	236	20	1
+40	237	20	2
+40	242	20.000152	1
+40	243	20.000152	0
+40	276	20.000314	1
+40	277	20.000314	2
+40	282	20.000466	1
+40	283	20.000466	0
+41	242	20.000152	158
+41	282	20.000466	158
+42	242	20.000152	158
+42	282	20.000466	158
+43	242	20.000152	158
+43	282	20.000466	158
+44	242	20.000152	0.000152
+44	282	20.000466	0.000466
+45	245	20.000152249256	158
+45	285	20.000466249256	158
+45	315	20.000703380576	158
+46	245	20.000152249256	158
+46	285	20.000466249256	158
+46	315	20.000703380576	158
+47	245	20.000152249256	158
+47	285	20.000466249256	158
+47	315	20.000703380576	158
+48	245	20.000152249256	158
+48	285	20.000466249256	158
+48	315	20.000703380576	158
+49	245	20.000152249256	130
+49	285	20.000466249256	130
+49	315	20.000703380576	130
+50	248	20.000152249256	108
+50	256	20.000152249256	108
+50	288	20.000466249256	108
+50	318	20.000703380576	108
+51	248	20.000152249256	1
+51	256	20.000152249256	2
+51	288	20.000466249256	3
+51	318	20.000703380576	4
+52	249	20.000152249256	100
+52	257	20.000152249256	100
+52	289	20.000466249256	100
+52	319	20.000703380576	100
+53	249	0.1	0
+53	249	0.2	0
+53	249	0.3	0
+53	249	0.4	0
+53	249	0.5	0
+53	249	0.6	0
+53	249	0.7	0
+53	249	0.8	0
+53	249	0.9	0
+53	249	1	0
+53	249	1.1	0
+53	249	1.2	0
+53	249	1.3	0
+53	249	1.4	0
+53	249	1.5	0
+53	249	1.6	0
+53	249	1.7	0
+53	249	1.8	0
+53	249	1.9	0
+53	249	2	0
+53	249	2.1	0
+53	249	2.2	0
+53	249	2.3	0
+53	249	2.4	0
+53	249	2.5	0
+53	249	2.6	0
+53	249	2.7	0
+53	249	2.8	0
+53	249	2.9	0
+53	249	3	0
+53	249	3.1	0
+53	249	3.2	0
+53	249	3.3	0
+53	249	3.4	0
+53	249	3.5	0
+53	249	3.6	0
+53	249	3.7	0
+53	249	3.8	0
+53	249	3.9	0
+53	249	4	0
+53	249	4.1	0
+53	249	4.2	0
+53	249	4.3	0
+53	249	4.4	0
+53	249	4.5	0
+53	249	4.6	0
+53	249	4.7	0
+53	249	4.8	0
+53	249	4.9	0
+53	249	5	0
+53	249	5.1	0
+53	249	5.2	0
+53	249	5.3	0
+53	249	5.4	0
+53	249	5.5	0
+53	249	5.6	0
+53	249	5.7	0
+53	249	5.8	0
+53	249	5.9	0
+53	249	6	0
+53	249	6.1	0
+53	249	6.2	0
+53	249	6.3	0
+53	249	6.4	0
+53	249	6.5	0
+53	249	6.6	0
+53	249	6.7	0
+53	249	6.8	0
+53	249	6.9	0
+53	249	7	0
+53	249	7.1	0
+53	249	7.2	0
+53	249	7.3	0
+53	249	7.4	0
+53	249	7.5	0
+53	249	7.6	0
+53	249	7.7	0
+53	249	7.8	0
+53	249	7.9	0
+53	249	8	0
+53	249	8.1	0
+53	249	8.2	0
+53	249	8.3	0
+53	249	8.4	0
+53	249	8.5	0
+53	249	8.6	0
+53	249	8.7	0
+53	249	8.8	0
+53	249	8.9	0
+53	249	9	0
+53	249	9.1	0
+53	249	9.2	0
+53	249	9.3	0
+53	249	9.4	0
+53	249	9.5	0
+53	249	9.6	0
+53	249	9.7	0
+53	249	9.8	0
+53	249	9.9	0
+53	249	10	0
+53	249	10.1	0
+53	249	10.2	0
+53	249	10.3	0
+53	249	10.4	0
+53	249	10.5	0
+53	249	10.6	0
+53	249	10.7	0
+53	249	10.8	0
+53	249	10.9	0
+53	249	11	0
+53	249	11.1	0
+53	249	11.2	0
+53	249	11.3	0
+53	249	11.4	0
+53	249	11.5	0
+53	249	11.6	0
+53	249	11.7	0
+53	249	11.8	0
+53	249	11.9	0
+53	249	12	0
+53	249	12.1	0
+53	249	12.2	0
+53	249	12.3	0
+53	249	12.4	0
+53	249	12.5	0
+53	249	12.6	0
+53	249	12.7	0
+53	249	12.8	0
+53	249	12.9	0
+53	249	13	0
+53	249	13.1	0
+53	249	13.2	0
+53	249	13.3	0
+53	249	13.4	0
+53	249	13.5	0
+53	249	13.6	0
+53	249	13.7	0
+53	249	13.8	0
+53	249	13.9	0
+53	249	14	0
+53	249	14.1	0
+53	249	14.2	0
+53	249	14.3	0
+53	249	14.4	0
+53	249	14.5	0
+53	249	14.6	0
+53	249	14.7	0
+53	249	14.8	0
+53	249	14.9	0
+53	249	15	0
+53	249	15.1	0
+53	249	15.2	0
+53	249	15.3	0
+53	249	15.4	0
+53	249	15.5	0
+53	249	15.6	0
+53	249	15.7	0
+53	249	15.8	0
+53	249	15.9	0
+53	249	16	0
+53	249	16.1	0
+53	249	16.2	0
+53	249	16.3	0
+53	249	16.4	0
+53	249	16.5	0
+53	249	16.6	0
+53	249	16.7	0
+53	249	16.8	0
+53	249	16.9	0
+53	249	17	0
+53	249	17.1	0
+53	249	17.2	0
+53	249	17.3	0
+53	249	17.4	0
+53	249	17.5	0
+53	249	17.6	0
+53	249	17.7	0
+53	249	17.8	0
+53	249	17.9	0
+53	249	18	0
+53	249	18.1	0
+53	249	18.2	0
+53	249	18.3	0
+53	249	18.4	0
+53	249	18.5	0
+53	249	18.6	0
+53	249	18.7	0
+53	249	18.8	0
+53	249	18.9	0
+53	249	19	0
+53	249	19.1	0
+53	249	19.2	0
+53	249	19.3	0
+53	249	19.4	0
+53	249	19.5	0
+53	249	19.6	0
+53	249	19.7	0
+53	249	19.8	0
+53	249	19.9	0
+53	249	20	0
+54	249	20.000152249256	0.000152249256
+54	257	20.000152249256	0.000152249256
+54	289	20.000466249256	0.000466249256
+54	319	20.000703380576	0.000703380576
+55	249	20.000152249256	100
+56	250	20.000152249256	108
+57	252	20.000152249256	128
+58	252	20.000152249256	128
+59	255	20.000152249256	130
+60	255	20.000152249256	158
+61	255	20.000152249256	1
+61	323	20.000787380576	0
+62	255	20.000152249256	12
+63	255	20.000152249256	1
+63	278	20.000314249256	0
+63	284	20.000466249256	1
+63	303	20.000551380576	0
+63	314	20.000703380576	1
+63	322	20.000787380576	0
+64	259	20.000152644738	158
+64	291	20.000466644738	158
+64	339	20.000940116414	158
+65	259	20.000152644738	158
+65	291	20.000466644738	158
+65	339	20.000940116414	158
+66	259	20.000152644738	158
+66	291	20.000466644738	158
+66	339	20.000940116414	158
+67	259	20.000152644738	158
+67	291	20.000466644738	158
+67	339	20.000940116414	158
+68	259	20.000152644738	130
+68	291	20.000466644738	130
+68	339	20.000940116414	130
+69	262	20.000152644738	108
+69	270	20.000152644738	108
+69	294	20.000466644738	108
+69	342	20.000940116414	108
+70	262	20.000152644738	1
+70	270	20.000152644738	2
+70	294	20.000466644738	3
+70	342	20.000940116414	4
+71	263	20.000152644738	100
+71	271	20.000152644738	100
+71	295	20.000466644738	100
+71	343	20.000940116414	100
+72	263	0.1	0
+72	263	0.2	0
+72	263	0.3	0
+72	263	0.4	0
+72	263	0.5	0
+72	263	0.6	0
+72	263	0.7	0
+72	263	0.8	0
+72	263	0.9	0
+72	263	1	0
+72	263	1.1	0
+72	263	1.2	0
+72	263	1.3	0
+72	263	1.4	0
+72	263	1.5	0
+72	263	1.6	0
+72	263	1.7	0
+72	263	1.8	0
+72	263	1.9	0
+72	263	2	0
+72	263	2.1	0
+72	263	2.2	0
+72	263	2.3	0
+72	263	2.4	0
+72	263	2.5	0
+72	263	2.6	0
+72	263	2.7	0
+72	263	2.8	0
+72	263	2.9	0
+72	263	3	0
+72	263	3.1	0
+72	263	3.2	0
+72	263	3.3	0
+72	263	3.4	0
+72	263	3.5	0
+72	263	3.6	0
+72	263	3.7	0
+72	263	3.8	0
+72	263	3.9	0
+72	263	4	0
+72	263	4.1	0
+72	263	4.2	0
+72	263	4.3	0
+72	263	4.4	0
+72	263	4.5	0
+72	263	4.6	0
+72	263	4.7	0
+72	263	4.8	0
+72	263	4.9	0
+72	263	5	0
+72	263	5.1	0
+72	263	5.2	0
+72	263	5.3	0
+72	263	5.4	0
+72	263	5.5	0
+72	263	5.6	0
+72	263	5.7	0
+72	263	5.8	0
+72	263	5.9	0
+72	263	6	0
+72	263	6.1	0
+72	263	6.2	0
+72	263	6.3	0
+72	263	6.4	0
+72	263	6.5	0
+72	263	6.6	0
+72	263	6.7	0
+72	263	6.8	0
+72	263	6.9	0
+72	263	7	0
+72	263	7.1	0
+72	263	7.2	0
+72	263	7.3	0
+72	263	7.4	0
+72	263	7.5	0
+72	263	7.6	0
+72	263	7.7	0
+72	263	7.8	0
+72	263	7.9	0
+72	263	8	0
+72	263	8.1	0
+72	263	8.2	0
+72	263	8.3	0
+72	263	8.4	0
+72	263	8.5	0
+72	263	8.6	0
+72	263	8.7	0
+72	263	8.8	0
+72	263	8.9	0
+72	263	9	0
+72	263	9.1	0
+72	263	9.2	0
+72	263	9.3	0
+72	263	9.4	0
+72	263	9.5	0
+72	263	9.6	0
+72	263	9.7	0
+72	263	9.8	0
+72	263	9.9	0
+72	263	10	0
+72	263	10.1	0
+72	263	10.2	0
+72	263	10.3	0
+72	263	10.4	0
+72	263	10.5	0
+72	263	10.6	0
+72	263	10.7	0
+72	263	10.8	0
+72	263	10.9	0
+72	263	11	0
+72	263	11.1	0
+72	263	11.2	0
+72	263	11.3	0
+72	263	11.4	0
+72	263	11.5	0
+72	263	11.6	0
+72	263	11.7	0
+72	263	11.8	0
+72	263	11.9	0
+72	263	12	0
+72	263	12.1	0
+72	263	12.2	0
+72	263	12.3	0
+72	263	12.4	0
+72	263	12.5	0
+72	263	12.6	0
+72	263	12.7	0
+72	263	12.8	0
+72	263	12.9	0
+72	263	13	0
+72	263	13.1	0
+72	263	13.2	0
+72	263	13.3	0
+72	263	13.4	0
+72	263	13.5	0
+72	263	13.6	0
+72	263	13.7	0
+72	263	13.8	0
+72	263	13.9	0
+72	263	14	0
+72	263	14.1	0
+72	263	14.2	0
+72	263	14.3	0
+72	263	14.4	0
+72	263	14.5	0
+72	263	14.6	0
+72	263	14.7	0
+72	263	14.8	0
+72	263	14.9	0
+72	263	15	0
+72	263	15.1	0
+72	263	15.2	0
+72	263	15.3	0
+72	263	15.4	0
+72	263	15.5	0
+72	263	15.6	0
+72	263	15.7	0
+72	263	15.8	0
+72	263	15.9	0
+72	263	16	0
+72	263	16.1	0
+72	263	16.2	0
+72	263	16.3	0
+72	263	16.4	0
+72	263	16.5	0
+72	263	16.6	0
+72	263	16.7	0
+72	263	16.8	0
+72	263	16.9	0
+72	263	17	0
+72	263	17.1	0
+72	263	17.2	0
+72	263	17.3	0
+72	263	17.4	0
+72	263	17.5	0
+72	263	17.6	0
+72	263	17.7	0
+72	263	17.8	0
+72	263	17.9	0
+72	263	18	0
+72	263	18.1	0
+72	263	18.2	0
+72	263	18.3	0
+72	263	18.4	0
+72	263	18.5	0
+72	263	18.6	0
+72	263	18.7	0
+72	263	18.8	0
+72	263	18.9	0
+72	263	19	0
+72	263	19.1	0
+72	263	19.2	0
+72	263	19.3	0
+72	263	19.4	0
+72	263	19.5	0
+72	263	19.6	0
+72	263	19.7	0
+72	263	19.8	0
+72	263	19.9	0
+72	263	20	0
+73	263	20.000152644738	0.000152644738
+73	271	20.000152644738	0.000152644738
+73	295	20.000466644738	0.000466644738
+73	343	20.000940116414	0.000940116414
+74	263	20.000152644738	100
+75	264	20.000152644738	108
+76	266	20.000152644738	128
+77	266	20.000152644738	128
+78	269	20.000152644738	130
+79	269	20.000152644738	158
+80	269	20.000152644738	1
+80	299	20.000550644738	0
+81	269	20.000152644738	10
+82	269	20.000152644738	1
+82	279	20.000314644738	0
+82	290	20.000466644738	1
+82	298	20.000550644738	0
+83	299	20.000550644738	158
+84	299	20.000550644738	0.000398
+85	299	20.000550644738	1
+85	306	20.000702644738	0
+86	299	20.000550644738	12000000
+87	299	20.000550644738	158
+88	299	20.000550644738	1
+88	306	20.000702644738	0
+89	300	20.000550644738	1
+89	301	20.000550644738	2
+89	306	20.000702644738	1
+89	307	20.000702644738	0
+90	306	20.000702644738	158
+91	306	20.000702644738	158
+92	306	20.000702644738	158
+93	306	20.000702644738	0.000152
+94	309	20.000703289476	158
+94	333	20.000939629832	158
+95	309	20.000703289476	158
+95	333	20.000939629832	158
+96	309	20.000703289476	158
+96	333	20.000939629832	158
+97	309	20.000703289476	158
+97	333	20.000939629832	158
+98	309	20.000703289476	130
+98	333	20.000939629832	130
+99	323	20.000787380576	158
+100	323	20.000787380576	0.00063513132
+101	323	20.000787380576	1
+101	330	20.000939380576	0
+102	323	20.000787380576	12000000
+103	323	20.000787380576	158
+104	323	20.000787380576	1
+104	330	20.000939380576	0
+105	324	20.000787380576	1
+105	325	20.000787380576	2
+105	330	20.000939380576	1
+105	331	20.000939380576	0
+106	330	20.000939380576	158
+107	330	20.000939380576	158
+108	330	20.000939380576	158
+109	330	20.000939380576	0.000152
+vector 111 Scenario.node[1].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+32	871	20.1	32000
+32	871	20.2	0
+32	871	20.3	0
+32	871	20.4	0
+32	871	20.5	0
+32	871	20.6	0
+32	871	20.7	0
+32	871	20.8	0
+32	871	20.9	0
+32	871	21	0
+32	871	21.1	0
+32	871	21.2	0
+32	871	21.3	0
+32	871	21.4	0
+32	871	21.5	0
+32	871	21.6	0
+32	871	21.7	0
+32	871	21.8	0
+32	871	21.9	0
+32	871	22	0
+32	871	22.1	0
+32	871	22.2	0
+32	871	22.3	0
+32	871	22.4	0
+32	871	22.5	0
+32	871	22.6	0
+32	871	22.7	0
+32	871	22.8	0
+32	871	22.9	0
+32	871	23	0
+32	871	23.1	0
+32	871	23.2	0
+32	871	23.3	0
+32	871	23.4	0
+32	871	23.5	0
+32	871	23.6	0
+32	871	23.7	0
+32	871	23.8	0
+32	871	23.9	0
+32	871	24	0
+32	871	24.1	0
+32	871	24.2	0
+32	871	24.3	0
+32	871	24.4	0
+32	871	24.5	0
+32	871	24.6	0
+32	871	24.7	0
+32	871	24.8	0
+32	871	24.9	0
+32	871	25	0
+32	871	25.1	0
+32	871	25.2	0
+32	871	25.3	0
+32	871	25.4	0
+32	871	25.5	0
+32	871	25.6	0
+32	871	25.7	0
+32	871	25.8	0
+32	871	25.9	0
+32	871	26	0
+32	871	26.1	0
+32	871	26.2	0
+32	871	26.3	0
+32	871	26.4	0
+32	871	26.5	0
+32	871	26.6	0
+32	871	26.7	0
+32	871	26.8	0
+32	871	26.9	0
+32	871	27	0
+32	871	27.1	0
+32	871	27.2	0
+32	871	27.3	0
+32	871	27.4	0
+32	871	27.5	0
+32	871	27.6	0
+32	871	27.7	0
+32	871	27.8	0
+32	871	27.9	0
+32	871	28	0
+32	871	28.1	0
+32	871	28.2	0
+32	871	28.3	0
+32	871	28.4	0
+32	871	28.5	0
+32	871	28.6	0
+32	871	28.7	0
+32	871	28.8	0
+32	871	28.9	0
+32	871	29	0
+32	871	29.1	0
+32	871	29.2	0
+32	871	29.3	0
+32	871	29.4	0
+32	871	29.5	0
+32	871	29.6	0
+32	871	29.7	0
+32	871	29.8	0
+32	871	29.9	0
+32	871	30	0
+32	871	30.1	0
+32	871	30.2	0
+32	871	30.3	0
+32	871	30.4	0
+32	871	30.5	0
+32	871	30.6	0
+32	871	30.7	0
+32	871	30.8	0
+32	871	30.9	0
+32	871	31	0
+32	871	31.1	0
+32	871	31.2	0
+32	871	31.3	0
+32	871	31.4	0
+32	871	31.5	0
+32	871	31.6	0
+32	871	31.7	0
+32	871	31.8	0
+32	871	31.9	0
+32	871	32	0
+32	871	32.1	0
+32	871	32.2	0
+32	871	32.3	0
+32	871	32.4	0
+32	871	32.5	0
+32	871	32.6	0
+32	871	32.7	0
+32	871	32.8	0
+32	871	32.9	0
+32	871	33	0
+32	871	33.1	0
+32	871	33.2	0
+32	871	33.3	0
+32	871	33.4	0
+32	871	33.5	0
+32	871	33.6	0
+32	871	33.7	0
+32	871	33.8	0
+32	871	33.9	0
+32	871	34	0
+32	871	34.1	0
+32	871	34.2	0
+32	871	34.3	0
+32	871	34.4	0
+32	871	34.5	0
+32	871	34.6	0
+32	871	34.7	0
+32	871	34.8	0
+32	871	34.9	0
+32	871	35	0
+32	871	35.1	0
+32	871	35.2	0
+32	871	35.3	0
+32	871	35.4	0
+32	871	35.5	0
+32	871	35.6	0
+32	871	35.7	0
+32	871	35.8	0
+32	871	35.9	0
+32	871	36	0
+32	871	36.1	0
+32	871	36.2	0
+32	871	36.3	0
+32	871	36.4	0
+32	871	36.5	0
+32	871	36.6	0
+32	871	36.7	0
+32	871	36.8	0
+32	871	36.9	0
+32	871	37	0
+32	871	37.1	0
+32	871	37.2	0
+32	871	37.3	0
+32	871	37.4	0
+32	871	37.5	0
+32	871	37.6	0
+32	871	37.7	0
+32	871	37.8	0
+32	871	37.9	0
+32	871	38	0
+32	871	38.1	0
+32	871	38.2	0
+32	871	38.3	0
+32	871	38.4	0
+32	871	38.5	0
+32	871	38.6	0
+32	871	38.7	0
+32	871	38.8	0
+32	871	38.9	0
+32	871	39	0
+32	871	39.1	0
+32	871	39.2	0
+32	871	39.3	0
+32	871	39.4	0
+32	871	39.5	0
+32	871	39.6	0
+32	871	39.7	0
+32	871	39.8	0
+32	871	39.9	0
+32	871	40	0
+32	871	40.1	0
+32	871	40.2	0
+32	871	40.3	0
+32	871	40.4	0
+32	871	40.5	0
+32	871	40.6	0
+32	871	40.7	0
+32	871	40.8	0
+32	871	40.9	0
+32	871	41	0
+32	871	41.1	0
+32	871	41.2	0
+32	871	41.3	0
+32	871	41.4	0
+32	871	41.5	0
+32	871	41.6	0
+32	871	41.7	0
+32	871	41.8	0
+32	871	41.9	0
+32	871	42	0
+32	871	42.1	0
+32	871	42.2	0
+32	871	42.3	0
+32	871	42.4	0
+32	871	42.5	0
+32	871	42.6	0
+32	871	42.7	0
+32	871	42.8	0
+32	871	42.9	0
+32	871	43	0
+32	871	43.1	0
+32	871	43.2	0
+32	871	43.3	0
+32	871	43.4	0
+32	871	43.5	0
+32	871	43.6	0
+32	871	43.7	0
+32	871	43.8	0
+32	871	43.9	0
+32	871	44	0
+32	871	44.1	0
+32	871	44.2	0
+32	871	44.3	0
+32	871	44.4	0
+32	871	44.5	0
+32	871	44.6	0
+32	871	44.7	0
+32	871	44.8	0
+32	871	44.9	0
+32	871	45	0
+32	871	45.1	0
+32	871	45.2	0
+32	871	45.3	0
+32	871	45.4	0
+32	871	45.5	0
+32	871	45.6	0
+32	871	45.7	0
+32	871	45.8	0
+32	871	45.9	0
+32	871	46	0
+32	871	46.1	0
+32	871	46.2	0
+32	871	46.3	0
+32	871	46.4	0
+32	871	46.5	0
+32	871	46.6	0
+32	871	46.7	0
+32	871	46.8	0
+32	871	46.9	0
+32	871	47	0
+32	871	47.1	0
+32	871	47.2	0
+32	871	47.3	0
+32	871	47.4	0
+32	871	47.5	0
+32	871	47.6	0
+32	871	47.7	0
+32	871	47.8	0
+32	871	47.9	0
+32	871	48	0
+32	871	48.1	0
+32	871	48.2	0
+32	871	48.3	0
+32	871	48.4	0
+32	871	48.5	0
+32	871	48.6	0
+32	871	48.7	0
+32	871	48.8	0
+32	871	48.9	0
+32	871	49	0
+32	871	49.1	0
+32	871	49.2	0
+32	871	49.3	0
+32	871	49.4	0
+32	871	49.5	0
+32	871	49.6	0
+32	871	49.7	0
+32	871	49.8	0
+32	871	49.9	0
+32	871	50	0
+32	871	50.1	0
+32	871	50.2	0
+32	871	50.3	0
+32	871	50.4	0
+32	871	50.5	0
+32	871	50.6	0
+32	871	50.7	0
+32	871	50.8	0
+32	871	50.9	0
+32	871	51	0
+32	871	51.1	0
+32	871	51.2	0
+32	871	51.3	0
+32	871	51.4	0
+32	871	51.5	0
+32	871	51.6	0
+32	871	51.7	0
+32	871	51.8	0
+32	871	51.9	0
+32	871	52	0
+32	871	52.1	0
+32	871	52.2	0
+32	871	52.3	0
+32	871	52.4	0
+32	871	52.5	0
+32	871	52.6	0
+32	871	52.7	0
+32	871	52.8	0
+32	871	52.9	0
+32	871	53	0
+32	871	53.1	0
+32	871	53.2	0
+32	871	53.3	0
+32	871	53.4	0
+32	871	53.5	0
+32	871	53.6	0
+32	871	53.7	0
+32	871	53.8	0
+32	871	53.9	0
+32	871	54	0
+32	871	54.1	0
+32	871	54.2	0
+32	871	54.3	0
+32	871	54.4	0
+32	871	54.5	0
+32	871	54.6	0
+32	871	54.7	0
+32	871	54.8	0
+32	871	54.9	0
+32	871	55	0
+32	871	55.1	0
+32	871	55.2	0
+32	871	55.3	0
+32	871	55.4	0
+32	871	55.5	0
+32	871	55.6	0
+32	871	55.7	0
+32	871	55.8	0
+32	871	55.9	0
+32	871	56	0
+32	871	56.1	0
+32	871	56.2	0
+32	871	56.3	0
+32	871	56.4	0
+32	871	56.5	0
+32	871	56.6	0
+32	871	56.7	0
+32	871	56.8	0
+32	871	56.9	0
+32	871	57	0
+32	871	57.1	0
+32	871	57.2	0
+32	871	57.3	0
+32	871	57.4	0
+32	871	57.5	0
+32	871	57.6	0
+32	871	57.7	0
+32	871	57.8	0
+32	871	57.9	0
+32	871	58	0
+32	871	58.1	0
+32	871	58.2	0
+32	871	58.3	0
+32	871	58.4	0
+32	871	58.5	0
+32	871	58.6	0
+32	871	58.7	0
+32	871	58.8	0
+32	871	58.9	0
+32	871	59	0
+32	871	59.1	0
+32	871	59.2	0
+32	871	59.3	0
+32	871	59.4	0
+32	871	59.5	0
+32	871	59.6	0
+32	871	59.7	0
+32	871	59.8	0
+32	871	59.9	0
+32	871	60	0
+32	871	60.1	0
+32	871	60.2	0
+32	871	60.3	0
+32	871	60.4	0
+32	871	60.5	0
+32	871	60.6	0
+32	871	60.7	0
+32	871	60.8	0
+32	871	60.9	0
+32	871	61	0
+32	871	61.1	0
+32	871	61.2	0
+32	871	61.3	0
+32	871	61.4	0
+32	871	61.5	0
+32	871	61.6	0
+32	871	61.7	0
+32	871	61.8	0
+32	871	61.9	0
+32	871	62	0
+32	871	62.1	0
+32	871	62.2	0
+32	871	62.3	0
+32	871	62.4	0
+32	871	62.5	0
+32	871	62.6	0
+32	871	62.7	0
+32	871	62.8	0
+32	871	62.9	0
+32	871	63	0
+32	871	63.1	0
+32	871	63.2	0
+32	871	63.3	0
+32	871	63.4	0
+32	871	63.5	0
+32	871	63.6	0
+32	871	63.7	0
+32	871	63.8	0
+32	871	63.9	0
+32	871	64	0
+32	871	64.1	0
+32	871	64.2	0
+32	871	64.3	0
+32	871	64.4	0
+32	871	64.5	0
+32	871	64.6	0
+32	871	64.7	0
+32	871	64.8	0
+32	871	64.9	0
+32	871	65	0
+32	871	65.1	0
+32	871	65.2	0
+32	871	65.3	0
+32	871	65.4	0
+32	871	65.5	0
+32	871	65.6	0
+32	871	65.7	0
+32	871	65.8	0
+32	871	65.9	0
+32	871	66	0
+32	871	66.1	0
+32	871	66.2	0
+32	871	66.3	0
+32	871	66.4	0
+32	871	66.5	0
+32	871	66.6	0
+32	871	66.7	0
+32	871	66.8	0
+32	871	66.9	0
+32	871	67	0
+32	871	67.1	0
+32	871	67.2	0
+32	871	67.3	0
+32	871	67.4	0
+32	871	67.5	0
+32	871	67.6	0
+32	871	67.7	0
+32	871	67.8	0
+32	871	67.9	0
+32	871	68	0
+32	871	68.1	0
+32	871	68.2	0
+32	871	68.3	0
+32	871	68.4	0
+32	871	68.5	0
+32	871	68.6	0
+32	871	68.7	0
+32	871	68.8	0
+32	871	68.9	0
+32	871	69	0
+32	871	69.1	0
+32	871	69.2	0
+32	871	69.3	0
+32	871	69.4	0
+32	871	69.5	0
+32	871	69.6	0
+32	871	69.7	0
+32	871	69.8	0
+32	871	69.9	0
+32	871	70	0
+32	871	70.1	0
+32	871	70.2	0
+32	871	70.3	0
+32	871	70.4	0
+32	871	70.5	0
+32	871	70.6	0
+32	871	70.7	0
+32	871	70.8	0
+32	871	70.9	0
+32	871	71	0
+32	871	71.1	0
+32	871	71.2	0
+32	871	71.3	0
+32	871	71.4	0
+32	871	71.5	0
+32	871	71.6	0
+32	871	71.7	0
+32	871	71.8	0
+32	871	71.9	0
+32	871	72	0
+32	871	72.1	0
+53	871	20.1	32000
+53	871	20.2	0
+53	871	20.3	0
+53	871	20.4	0
+53	871	20.5	0
+53	871	20.6	0
+53	871	20.7	0
+53	871	20.8	0
+53	871	20.9	0
+53	871	21	0
+53	871	21.1	0
+53	871	21.2	0
+53	871	21.3	0
+53	871	21.4	0
+53	871	21.5	0
+53	871	21.6	0
+53	871	21.7	0
+53	871	21.8	0
+53	871	21.9	0
+53	871	22	0
+53	871	22.1	0
+53	871	22.2	0
+53	871	22.3	0
+53	871	22.4	0
+53	871	22.5	0
+53	871	22.6	0
+53	871	22.7	0
+53	871	22.8	0
+53	871	22.9	0
+53	871	23	0
+53	871	23.1	0
+53	871	23.2	0
+53	871	23.3	0
+53	871	23.4	0
+53	871	23.5	0
+53	871	23.6	0
+53	871	23.7	0
+53	871	23.8	0
+53	871	23.9	0
+53	871	24	0
+53	871	24.1	0
+53	871	24.2	0
+53	871	24.3	0
+53	871	24.4	0
+53	871	24.5	0
+53	871	24.6	0
+53	871	24.7	0
+53	871	24.8	0
+53	871	24.9	0
+53	871	25	0
+53	871	25.1	0
+53	871	25.2	0
+53	871	25.3	0
+53	871	25.4	0
+53	871	25.5	0
+53	871	25.6	0
+53	871	25.7	0
+53	871	25.8	0
+53	871	25.9	0
+53	871	26	0
+53	871	26.1	0
+53	871	26.2	0
+53	871	26.3	0
+53	871	26.4	0
+53	871	26.5	0
+53	871	26.6	0
+53	871	26.7	0
+53	871	26.8	0
+53	871	26.9	0
+53	871	27	0
+53	871	27.1	0
+53	871	27.2	0
+53	871	27.3	0
+53	871	27.4	0
+53	871	27.5	0
+53	871	27.6	0
+53	871	27.7	0
+53	871	27.8	0
+53	871	27.9	0
+53	871	28	0
+53	871	28.1	0
+53	871	28.2	0
+53	871	28.3	0
+53	871	28.4	0
+53	871	28.5	0
+53	871	28.6	0
+53	871	28.7	0
+53	871	28.8	0
+53	871	28.9	0
+53	871	29	0
+53	871	29.1	0
+53	871	29.2	0
+53	871	29.3	0
+53	871	29.4	0
+53	871	29.5	0
+53	871	29.6	0
+53	871	29.7	0
+53	871	29.8	0
+53	871	29.9	0
+53	871	30	0
+53	871	30.1	0
+53	871	30.2	0
+53	871	30.3	0
+53	871	30.4	0
+53	871	30.5	0
+53	871	30.6	0
+53	871	30.7	0
+53	871	30.8	0
+53	871	30.9	0
+53	871	31	0
+53	871	31.1	0
+53	871	31.2	0
+53	871	31.3	0
+53	871	31.4	0
+53	871	31.5	0
+53	871	31.6	0
+53	871	31.7	0
+53	871	31.8	0
+53	871	31.9	0
+53	871	32	0
+53	871	32.1	0
+53	871	32.2	0
+53	871	32.3	0
+53	871	32.4	0
+53	871	32.5	0
+53	871	32.6	0
+53	871	32.7	0
+53	871	32.8	0
+53	871	32.9	0
+53	871	33	0
+53	871	33.1	0
+53	871	33.2	0
+53	871	33.3	0
+53	871	33.4	0
+53	871	33.5	0
+53	871	33.6	0
+53	871	33.7	0
+53	871	33.8	0
+53	871	33.9	0
+53	871	34	0
+53	871	34.1	0
+53	871	34.2	0
+53	871	34.3	0
+53	871	34.4	0
+53	871	34.5	0
+53	871	34.6	0
+53	871	34.7	0
+53	871	34.8	0
+53	871	34.9	0
+53	871	35	0
+53	871	35.1	0
+53	871	35.2	0
+53	871	35.3	0
+53	871	35.4	0
+53	871	35.5	0
+53	871	35.6	0
+53	871	35.7	0
+53	871	35.8	0
+53	871	35.9	0
+53	871	36	0
+53	871	36.1	0
+53	871	36.2	0
+53	871	36.3	0
+53	871	36.4	0
+53	871	36.5	0
+53	871	36.6	0
+53	871	36.7	0
+53	871	36.8	0
+53	871	36.9	0
+53	871	37	0
+53	871	37.1	0
+53	871	37.2	0
+53	871	37.3	0
+53	871	37.4	0
+53	871	37.5	0
+53	871	37.6	0
+53	871	37.7	0
+53	871	37.8	0
+53	871	37.9	0
+53	871	38	0
+53	871	38.1	0
+53	871	38.2	0
+53	871	38.3	0
+53	871	38.4	0
+53	871	38.5	0
+53	871	38.6	0
+53	871	38.7	0
+53	871	38.8	0
+53	871	38.9	0
+53	871	39	0
+53	871	39.1	0
+53	871	39.2	0
+53	871	39.3	0
+53	871	39.4	0
+53	871	39.5	0
+53	871	39.6	0
+53	871	39.7	0
+53	871	39.8	0
+53	871	39.9	0
+53	871	40	0
+53	871	40.1	0
+53	871	40.2	0
+53	871	40.3	0
+53	871	40.4	0
+53	871	40.5	0
+53	871	40.6	0
+53	871	40.7	0
+53	871	40.8	0
+53	871	40.9	0
+53	871	41	0
+53	871	41.1	0
+53	871	41.2	0
+53	871	41.3	0
+53	871	41.4	0
+53	871	41.5	0
+53	871	41.6	0
+53	871	41.7	0
+53	871	41.8	0
+53	871	41.9	0
+53	871	42	0
+53	871	42.1	0
+53	871	42.2	0
+53	871	42.3	0
+53	871	42.4	0
+53	871	42.5	0
+53	871	42.6	0
+53	871	42.7	0
+53	871	42.8	0
+53	871	42.9	0
+53	871	43	0
+53	871	43.1	0
+53	871	43.2	0
+53	871	43.3	0
+53	871	43.4	0
+53	871	43.5	0
+53	871	43.6	0
+53	871	43.7	0
+53	871	43.8	0
+53	871	43.9	0
+53	871	44	0
+53	871	44.1	0
+53	871	44.2	0
+53	871	44.3	0
+53	871	44.4	0
+53	871	44.5	0
+53	871	44.6	0
+53	871	44.7	0
+53	871	44.8	0
+53	871	44.9	0
+53	871	45	0
+53	871	45.1	0
+53	871	45.2	0
+53	871	45.3	0
+53	871	45.4	0
+53	871	45.5	0
+53	871	45.6	0
+53	871	45.7	0
+53	871	45.8	0
+53	871	45.9	0
+53	871	46	0
+53	871	46.1	0
+53	871	46.2	0
+53	871	46.3	0
+53	871	46.4	0
+53	871	46.5	0
+53	871	46.6	0
+53	871	46.7	0
+53	871	46.8	0
+53	871	46.9	0
+53	871	47	0
+53	871	47.1	0
+53	871	47.2	0
+53	871	47.3	0
+53	871	47.4	0
+53	871	47.5	0
+53	871	47.6	0
+53	871	47.7	0
+53	871	47.8	0
+53	871	47.9	0
+53	871	48	0
+53	871	48.1	0
+53	871	48.2	0
+53	871	48.3	0
+53	871	48.4	0
+53	871	48.5	0
+53	871	48.6	0
+53	871	48.7	0
+53	871	48.8	0
+53	871	48.9	0
+53	871	49	0
+53	871	49.1	0
+53	871	49.2	0
+53	871	49.3	0
+53	871	49.4	0
+53	871	49.5	0
+53	871	49.6	0
+53	871	49.7	0
+53	871	49.8	0
+53	871	49.9	0
+53	871	50	0
+53	871	50.1	0
+53	871	50.2	0
+53	871	50.3	0
+53	871	50.4	0
+53	871	50.5	0
+53	871	50.6	0
+53	871	50.7	0
+53	871	50.8	0
+53	871	50.9	0
+53	871	51	0
+53	871	51.1	0
+53	871	51.2	0
+53	871	51.3	0
+53	871	51.4	0
+53	871	51.5	0
+53	871	51.6	0
+53	871	51.7	0
+53	871	51.8	0
+53	871	51.9	0
+53	871	52	0
+53	871	52.1	0
+53	871	52.2	0
+53	871	52.3	0
+53	871	52.4	0
+53	871	52.5	0
+53	871	52.6	0
+53	871	52.7	0
+53	871	52.8	0
+53	871	52.9	0
+53	871	53	0
+53	871	53.1	0
+53	871	53.2	0
+53	871	53.3	0
+53	871	53.4	0
+53	871	53.5	0
+53	871	53.6	0
+53	871	53.7	0
+53	871	53.8	0
+53	871	53.9	0
+53	871	54	0
+53	871	54.1	0
+53	871	54.2	0
+53	871	54.3	0
+53	871	54.4	0
+53	871	54.5	0
+53	871	54.6	0
+53	871	54.7	0
+53	871	54.8	0
+53	871	54.9	0
+53	871	55	0
+53	871	55.1	0
+53	871	55.2	0
+53	871	55.3	0
+53	871	55.4	0
+53	871	55.5	0
+53	871	55.6	0
+53	871	55.7	0
+53	871	55.8	0
+53	871	55.9	0
+53	871	56	0
+53	871	56.1	0
+53	871	56.2	0
+53	871	56.3	0
+53	871	56.4	0
+53	871	56.5	0
+53	871	56.6	0
+53	871	56.7	0
+53	871	56.8	0
+53	871	56.9	0
+53	871	57	0
+53	871	57.1	0
+53	871	57.2	0
+53	871	57.3	0
+53	871	57.4	0
+53	871	57.5	0
+53	871	57.6	0
+53	871	57.7	0
+53	871	57.8	0
+53	871	57.9	0
+53	871	58	0
+53	871	58.1	0
+53	871	58.2	0
+53	871	58.3	0
+53	871	58.4	0
+53	871	58.5	0
+53	871	58.6	0
+53	871	58.7	0
+53	871	58.8	0
+53	871	58.9	0
+53	871	59	0
+53	871	59.1	0
+53	871	59.2	0
+53	871	59.3	0
+53	871	59.4	0
+53	871	59.5	0
+53	871	59.6	0
+53	871	59.7	0
+53	871	59.8	0
+53	871	59.9	0
+53	871	60	0
+53	871	60.1	0
+53	871	60.2	0
+53	871	60.3	0
+53	871	60.4	0
+53	871	60.5	0
+53	871	60.6	0
+53	871	60.7	0
+53	871	60.8	0
+53	871	60.9	0
+53	871	61	0
+53	871	61.1	0
+53	871	61.2	0
+53	871	61.3	0
+53	871	61.4	0
+53	871	61.5	0
+53	871	61.6	0
+53	871	61.7	0
+53	871	61.8	0
+53	871	61.9	0
+53	871	62	0
+53	871	62.1	0
+53	871	62.2	0
+53	871	62.3	0
+53	871	62.4	0
+53	871	62.5	0
+53	871	62.6	0
+53	871	62.7	0
+53	871	62.8	0
+53	871	62.9	0
+53	871	63	0
+53	871	63.1	0
+53	871	63.2	0
+53	871	63.3	0
+53	871	63.4	0
+53	871	63.5	0
+53	871	63.6	0
+53	871	63.7	0
+53	871	63.8	0
+53	871	63.9	0
+53	871	64	0
+53	871	64.1	0
+53	871	64.2	0
+53	871	64.3	0
+53	871	64.4	0
+53	871	64.5	0
+53	871	64.6	0
+53	871	64.7	0
+53	871	64.8	0
+53	871	64.9	0
+53	871	65	0
+53	871	65.1	0
+53	871	65.2	0
+53	871	65.3	0
+53	871	65.4	0
+53	871	65.5	0
+53	871	65.6	0
+53	871	65.7	0
+53	871	65.8	0
+53	871	65.9	0
+53	871	66	0
+53	871	66.1	0
+53	871	66.2	0
+53	871	66.3	0
+53	871	66.4	0
+53	871	66.5	0
+53	871	66.6	0
+53	871	66.7	0
+53	871	66.8	0
+53	871	66.9	0
+53	871	67	0
+53	871	67.1	0
+53	871	67.2	0
+53	871	67.3	0
+53	871	67.4	0
+53	871	67.5	0
+53	871	67.6	0
+53	871	67.7	0
+53	871	67.8	0
+53	871	67.9	0
+53	871	68	0
+53	871	68.1	0
+53	871	68.2	0
+53	871	68.3	0
+53	871	68.4	0
+53	871	68.5	0
+53	871	68.6	0
+53	871	68.7	0
+53	871	68.8	0
+53	871	68.9	0
+53	871	69	0
+53	871	69.1	0
+53	871	69.2	0
+53	871	69.3	0
+53	871	69.4	0
+53	871	69.5	0
+53	871	69.6	0
+53	871	69.7	0
+53	871	69.8	0
+53	871	69.9	0
+53	871	70	0
+53	871	70.1	0
+53	871	70.2	0
+53	871	70.3	0
+53	871	70.4	0
+53	871	70.5	0
+53	871	70.6	0
+53	871	70.7	0
+53	871	70.8	0
+53	871	70.9	0
+53	871	71	0
+53	871	71.1	0
+53	871	71.2	0
+53	871	71.3	0
+53	871	71.4	0
+53	871	71.5	0
+53	871	71.6	0
+53	871	71.7	0
+53	871	71.8	0
+53	871	71.9	0
+53	871	72	0
+53	871	72.1	0
+72	871	20.1	32000
+72	871	20.2	0
+72	871	20.3	0
+72	871	20.4	0
+72	871	20.5	0
+72	871	20.6	0
+72	871	20.7	0
+72	871	20.8	0
+72	871	20.9	0
+72	871	21	0
+72	871	21.1	0
+72	871	21.2	0
+72	871	21.3	0
+72	871	21.4	0
+72	871	21.5	0
+72	871	21.6	0
+72	871	21.7	0
+72	871	21.8	0
+72	871	21.9	0
+72	871	22	0
+72	871	22.1	0
+72	871	22.2	0
+72	871	22.3	0
+72	871	22.4	0
+72	871	22.5	0
+72	871	22.6	0
+72	871	22.7	0
+72	871	22.8	0
+72	871	22.9	0
+72	871	23	0
+72	871	23.1	0
+72	871	23.2	0
+72	871	23.3	0
+72	871	23.4	0
+72	871	23.5	0
+72	871	23.6	0
+72	871	23.7	0
+72	871	23.8	0
+72	871	23.9	0
+72	871	24	0
+72	871	24.1	0
+72	871	24.2	0
+72	871	24.3	0
+72	871	24.4	0
+72	871	24.5	0
+72	871	24.6	0
+72	871	24.7	0
+72	871	24.8	0
+72	871	24.9	0
+72	871	25	0
+72	871	25.1	0
+72	871	25.2	0
+72	871	25.3	0
+72	871	25.4	0
+72	871	25.5	0
+72	871	25.6	0
+72	871	25.7	0
+72	871	25.8	0
+72	871	25.9	0
+72	871	26	0
+72	871	26.1	0
+72	871	26.2	0
+72	871	26.3	0
+72	871	26.4	0
+72	871	26.5	0
+72	871	26.6	0
+72	871	26.7	0
+72	871	26.8	0
+72	871	26.9	0
+72	871	27	0
+72	871	27.1	0
+72	871	27.2	0
+72	871	27.3	0
+72	871	27.4	0
+72	871	27.5	0
+72	871	27.6	0
+72	871	27.7	0
+72	871	27.8	0
+72	871	27.9	0
+72	871	28	0
+72	871	28.1	0
+72	871	28.2	0
+72	871	28.3	0
+72	871	28.4	0
+72	871	28.5	0
+72	871	28.6	0
+72	871	28.7	0
+72	871	28.8	0
+72	871	28.9	0
+72	871	29	0
+72	871	29.1	0
+72	871	29.2	0
+72	871	29.3	0
+72	871	29.4	0
+72	871	29.5	0
+72	871	29.6	0
+72	871	29.7	0
+72	871	29.8	0
+72	871	29.9	0
+72	871	30	0
+72	871	30.1	0
+72	871	30.2	0
+72	871	30.3	0
+72	871	30.4	0
+72	871	30.5	0
+72	871	30.6	0
+72	871	30.7	0
+72	871	30.8	0
+72	871	30.9	0
+72	871	31	0
+72	871	31.1	0
+72	871	31.2	0
+72	871	31.3	0
+72	871	31.4	0
+72	871	31.5	0
+72	871	31.6	0
+72	871	31.7	0
+72	871	31.8	0
+72	871	31.9	0
+72	871	32	0
+72	871	32.1	0
+72	871	32.2	0
+72	871	32.3	0
+72	871	32.4	0
+72	871	32.5	0
+72	871	32.6	0
+72	871	32.7	0
+72	871	32.8	0
+72	871	32.9	0
+72	871	33	0
+72	871	33.1	0
+72	871	33.2	0
+72	871	33.3	0
+72	871	33.4	0
+72	871	33.5	0
+72	871	33.6	0
+72	871	33.7	0
+72	871	33.8	0
+72	871	33.9	0
+72	871	34	0
+72	871	34.1	0
+72	871	34.2	0
+72	871	34.3	0
+72	871	34.4	0
+72	871	34.5	0
+72	871	34.6	0
+72	871	34.7	0
+72	871	34.8	0
+72	871	34.9	0
+72	871	35	0
+72	871	35.1	0
+72	871	35.2	0
+72	871	35.3	0
+72	871	35.4	0
+72	871	35.5	0
+72	871	35.6	0
+72	871	35.7	0
+72	871	35.8	0
+72	871	35.9	0
+72	871	36	0
+72	871	36.1	0
+72	871	36.2	0
+72	871	36.3	0
+72	871	36.4	0
+72	871	36.5	0
+72	871	36.6	0
+72	871	36.7	0
+72	871	36.8	0
+72	871	36.9	0
+72	871	37	0
+72	871	37.1	0
+72	871	37.2	0
+72	871	37.3	0
+72	871	37.4	0
+72	871	37.5	0
+72	871	37.6	0
+72	871	37.7	0
+72	871	37.8	0
+72	871	37.9	0
+72	871	38	0
+72	871	38.1	0
+72	871	38.2	0
+72	871	38.3	0
+72	871	38.4	0
+72	871	38.5	0
+72	871	38.6	0
+72	871	38.7	0
+72	871	38.8	0
+72	871	38.9	0
+72	871	39	0
+72	871	39.1	0
+72	871	39.2	0
+72	871	39.3	0
+72	871	39.4	0
+72	871	39.5	0
+72	871	39.6	0
+72	871	39.7	0
+72	871	39.8	0
+72	871	39.9	0
+72	871	40	0
+72	871	40.1	0
+72	871	40.2	0
+72	871	40.3	0
+72	871	40.4	0
+72	871	40.5	0
+72	871	40.6	0
+72	871	40.7	0
+72	871	40.8	0
+72	871	40.9	0
+72	871	41	0
+72	871	41.1	0
+72	871	41.2	0
+72	871	41.3	0
+72	871	41.4	0
+72	871	41.5	0
+72	871	41.6	0
+72	871	41.7	0
+72	871	41.8	0
+72	871	41.9	0
+72	871	42	0
+72	871	42.1	0
+72	871	42.2	0
+72	871	42.3	0
+72	871	42.4	0
+72	871	42.5	0
+72	871	42.6	0
+72	871	42.7	0
+72	871	42.8	0
+72	871	42.9	0
+72	871	43	0
+72	871	43.1	0
+72	871	43.2	0
+72	871	43.3	0
+72	871	43.4	0
+72	871	43.5	0
+72	871	43.6	0
+72	871	43.7	0
+72	871	43.8	0
+72	871	43.9	0
+72	871	44	0
+72	871	44.1	0
+72	871	44.2	0
+72	871	44.3	0
+72	871	44.4	0
+72	871	44.5	0
+72	871	44.6	0
+72	871	44.7	0
+72	871	44.8	0
+72	871	44.9	0
+72	871	45	0
+72	871	45.1	0
+72	871	45.2	0
+72	871	45.3	0
+72	871	45.4	0
+72	871	45.5	0
+72	871	45.6	0
+72	871	45.7	0
+72	871	45.8	0
+72	871	45.9	0
+72	871	46	0
+72	871	46.1	0
+72	871	46.2	0
+72	871	46.3	0
+72	871	46.4	0
+72	871	46.5	0
+72	871	46.6	0
+72	871	46.7	0
+72	871	46.8	0
+72	871	46.9	0
+72	871	47	0
+72	871	47.1	0
+72	871	47.2	0
+72	871	47.3	0
+72	871	47.4	0
+72	871	47.5	0
+72	871	47.6	0
+72	871	47.7	0
+72	871	47.8	0
+72	871	47.9	0
+72	871	48	0
+72	871	48.1	0
+72	871	48.2	0
+72	871	48.3	0
+72	871	48.4	0
+72	871	48.5	0
+72	871	48.6	0
+72	871	48.7	0
+72	871	48.8	0
+72	871	48.9	0
+72	871	49	0
+72	871	49.1	0
+72	871	49.2	0
+72	871	49.3	0
+72	871	49.4	0
+72	871	49.5	0
+72	871	49.6	0
+72	871	49.7	0
+72	871	49.8	0
+72	871	49.9	0
+72	871	50	0
+72	871	50.1	0
+72	871	50.2	0
+72	871	50.3	0
+72	871	50.4	0
+72	871	50.5	0
+72	871	50.6	0
+72	871	50.7	0
+72	871	50.8	0
+72	871	50.9	0
+72	871	51	0
+72	871	51.1	0
+72	871	51.2	0
+72	871	51.3	0
+72	871	51.4	0
+72	871	51.5	0
+72	871	51.6	0
+72	871	51.7	0
+72	871	51.8	0
+72	871	51.9	0
+72	871	52	0
+72	871	52.1	0
+72	871	52.2	0
+72	871	52.3	0
+72	871	52.4	0
+72	871	52.5	0
+72	871	52.6	0
+72	871	52.7	0
+72	871	52.8	0
+72	871	52.9	0
+72	871	53	0
+72	871	53.1	0
+72	871	53.2	0
+72	871	53.3	0
+72	871	53.4	0
+72	871	53.5	0
+72	871	53.6	0
+72	871	53.7	0
+72	871	53.8	0
+72	871	53.9	0
+72	871	54	0
+72	871	54.1	0
+72	871	54.2	0
+72	871	54.3	0
+72	871	54.4	0
+72	871	54.5	0
+72	871	54.6	0
+72	871	54.7	0
+72	871	54.8	0
+72	871	54.9	0
+72	871	55	0
+72	871	55.1	0
+72	871	55.2	0
+72	871	55.3	0
+72	871	55.4	0
+72	871	55.5	0
+72	871	55.6	0
+72	871	55.7	0
+72	871	55.8	0
+72	871	55.9	0
+72	871	56	0
+72	871	56.1	0
+72	871	56.2	0
+72	871	56.3	0
+72	871	56.4	0
+72	871	56.5	0
+72	871	56.6	0
+72	871	56.7	0
+72	871	56.8	0
+72	871	56.9	0
+72	871	57	0
+72	871	57.1	0
+72	871	57.2	0
+72	871	57.3	0
+72	871	57.4	0
+72	871	57.5	0
+72	871	57.6	0
+72	871	57.7	0
+72	871	57.8	0
+72	871	57.9	0
+72	871	58	0
+72	871	58.1	0
+72	871	58.2	0
+72	871	58.3	0
+72	871	58.4	0
+72	871	58.5	0
+72	871	58.6	0
+72	871	58.7	0
+72	871	58.8	0
+72	871	58.9	0
+72	871	59	0
+72	871	59.1	0
+72	871	59.2	0
+72	871	59.3	0
+72	871	59.4	0
+72	871	59.5	0
+72	871	59.6	0
+72	871	59.7	0
+72	871	59.8	0
+72	871	59.9	0
+72	871	60	0
+72	871	60.1	0
+72	871	60.2	0
+72	871	60.3	0
+72	871	60.4	0
+72	871	60.5	0
+72	871	60.6	0
+72	871	60.7	0
+72	871	60.8	0
+72	871	60.9	0
+72	871	61	0
+72	871	61.1	0
+72	871	61.2	0
+72	871	61.3	0
+72	871	61.4	0
+72	871	61.5	0
+72	871	61.6	0
+72	871	61.7	0
+72	871	61.8	0
+72	871	61.9	0
+72	871	62	0
+72	871	62.1	0
+72	871	62.2	0
+72	871	62.3	0
+72	871	62.4	0
+72	871	62.5	0
+72	871	62.6	0
+72	871	62.7	0
+72	871	62.8	0
+72	871	62.9	0
+72	871	63	0
+72	871	63.1	0
+72	871	63.2	0
+72	871	63.3	0
+72	871	63.4	0
+72	871	63.5	0
+72	871	63.6	0
+72	871	63.7	0
+72	871	63.8	0
+72	871	63.9	0
+72	871	64	0
+72	871	64.1	0
+72	871	64.2	0
+72	871	64.3	0
+72	871	64.4	0
+72	871	64.5	0
+72	871	64.6	0
+72	871	64.7	0
+72	871	64.8	0
+72	871	64.9	0
+72	871	65	0
+72	871	65.1	0
+72	871	65.2	0
+72	871	65.3	0
+72	871	65.4	0
+72	871	65.5	0
+72	871	65.6	0
+72	871	65.7	0
+72	871	65.8	0
+72	871	65.9	0
+72	871	66	0
+72	871	66.1	0
+72	871	66.2	0
+72	871	66.3	0
+72	871	66.4	0
+72	871	66.5	0
+72	871	66.6	0
+72	871	66.7	0
+72	871	66.8	0
+72	871	66.9	0
+72	871	67	0
+72	871	67.1	0
+72	871	67.2	0
+72	871	67.3	0
+72	871	67.4	0
+72	871	67.5	0
+72	871	67.6	0
+72	871	67.7	0
+72	871	67.8	0
+72	871	67.9	0
+72	871	68	0
+72	871	68.1	0
+72	871	68.2	0
+72	871	68.3	0
+72	871	68.4	0
+72	871	68.5	0
+72	871	68.6	0
+72	871	68.7	0
+72	871	68.8	0
+72	871	68.9	0
+72	871	69	0
+72	871	69.1	0
+72	871	69.2	0
+72	871	69.3	0
+72	871	69.4	0
+72	871	69.5	0
+72	871	69.6	0
+72	871	69.7	0
+72	871	69.8	0
+72	871	69.9	0
+72	871	70	0
+72	871	70.1	0
+72	871	70.2	0
+72	871	70.3	0
+72	871	70.4	0
+72	871	70.5	0
+72	871	70.6	0
+72	871	70.7	0
+72	871	70.8	0
+72	871	70.9	0
+72	871	71	0
+72	871	71.1	0
+72	871	71.2	0
+72	871	71.3	0
+72	871	71.4	0
+72	871	71.5	0
+72	871	71.6	0
+72	871	71.7	0
+72	871	71.8	0
+72	871	71.9	0
+72	871	72	0
+72	871	72.1	0
+111	871	0.1	0
+111	871	0.2	0
+111	871	0.3	0
+111	871	0.4	0
+111	871	0.5	0
+111	871	0.6	0
+111	871	0.7	0
+111	871	0.8	0
+111	871	0.9	0
+111	871	1	0
+111	871	1.1	0
+111	871	1.2	0
+111	871	1.3	0
+111	871	1.4	0
+111	871	1.5	0
+111	871	1.6	0
+111	871	1.7	0
+111	871	1.8	0
+111	871	1.9	0
+111	871	2	0
+111	871	2.1	0
+111	871	2.2	0
+111	871	2.3	0
+111	871	2.4	0
+111	871	2.5	0
+111	871	2.6	0
+111	871	2.7	0
+111	871	2.8	0
+111	871	2.9	0
+111	871	3	0
+111	871	3.1	0
+111	871	3.2	0
+111	871	3.3	0
+111	871	3.4	0
+111	871	3.5	0
+111	871	3.6	0
+111	871	3.7	0
+111	871	3.8	0
+111	871	3.9	0
+111	871	4	0
+111	871	4.1	0
+111	871	4.2	0
+111	871	4.3	0
+111	871	4.4	0
+111	871	4.5	0
+111	871	4.6	0
+111	871	4.7	0
+111	871	4.8	0
+111	871	4.9	0
+111	871	5	0
+111	871	5.1	0
+111	871	5.2	0
+111	871	5.3	0
+111	871	5.4	0
+111	871	5.5	0
+111	871	5.6	0
+111	871	5.7	0
+111	871	5.8	0
+111	871	5.9	0
+111	871	6	0
+111	871	6.1	0
+111	871	6.2	0
+111	871	6.3	0
+111	871	6.4	0
+111	871	6.5	0
+111	871	6.6	0
+111	871	6.7	0
+111	871	6.8	0
+111	871	6.9	0
+111	871	7	0
+111	871	7.1	0
+111	871	7.2	0
+111	871	7.3	0
+111	871	7.4	0
+111	871	7.5	0
+111	871	7.6	0
+111	871	7.7	0
+111	871	7.8	0
+111	871	7.9	0
+111	871	8	0
+111	871	8.1	0
+111	871	8.2	0
+111	871	8.3	0
+111	871	8.4	0
+111	871	8.5	0
+111	871	8.6	0
+111	871	8.7	0
+111	871	8.8	0
+111	871	8.9	0
+111	871	9	0
+111	871	9.1	0
+111	871	9.2	0
+111	871	9.3	0
+111	871	9.4	0
+111	871	9.5	0
+111	871	9.6	0
+111	871	9.7	0
+111	871	9.8	0
+111	871	9.9	0
+111	871	10	0
+111	871	10.1	0
+111	871	10.2	0
+111	871	10.3	0
+111	871	10.4	0
+111	871	10.5	0
+111	871	10.6	0
+111	871	10.7	0
+111	871	10.8	0
+111	871	10.9	0
+111	871	11	0
+111	871	11.1	0
+111	871	11.2	0
+111	871	11.3	0
+111	871	11.4	0
+111	871	11.5	0
+111	871	11.6	0
+111	871	11.7	0
+111	871	11.8	0
+111	871	11.9	0
+111	871	12	0
+111	871	12.1	0
+111	871	12.2	0
+111	871	12.3	0
+111	871	12.4	0
+111	871	12.5	0
+111	871	12.6	0
+111	871	12.7	0
+111	871	12.8	0
+111	871	12.9	0
+111	871	13	0
+111	871	13.1	0
+111	871	13.2	0
+111	871	13.3	0
+111	871	13.4	0
+111	871	13.5	0
+111	871	13.6	0
+111	871	13.7	0
+111	871	13.8	0
+111	871	13.9	0
+111	871	14	0
+111	871	14.1	0
+111	871	14.2	0
+111	871	14.3	0
+111	871	14.4	0
+111	871	14.5	0
+111	871	14.6	0
+111	871	14.7	0
+111	871	14.8	0
+111	871	14.9	0
+111	871	15	0
+111	871	15.1	0
+111	871	15.2	0
+111	871	15.3	0
+111	871	15.4	0
+111	871	15.5	0
+111	871	15.6	0
+111	871	15.7	0
+111	871	15.8	0
+111	871	15.9	0
+111	871	16	0
+111	871	16.1	0
+111	871	16.2	0
+111	871	16.3	0
+111	871	16.4	0
+111	871	16.5	0
+111	871	16.6	0
+111	871	16.7	0
+111	871	16.8	0
+111	871	16.9	0
+111	871	17	0
+111	871	17.1	0
+111	871	17.2	0
+111	871	17.3	0
+111	871	17.4	0
+111	871	17.5	0
+111	871	17.6	0
+111	871	17.7	0
+111	871	17.8	0
+111	871	17.9	0
+111	871	18	0
+111	871	18.1	0
+111	871	18.2	0
+111	871	18.3	0
+111	871	18.4	0
+111	871	18.5	0
+111	871	18.6	0
+111	871	18.7	0
+111	871	18.8	0
+111	871	18.9	0
+111	871	19	0
+111	871	19.1	0
+111	871	19.2	0
+111	871	19.3	0
+111	871	19.4	0
+111	871	19.5	0
+111	871	19.6	0
+111	871	19.7	0
+111	871	19.8	0
+111	871	19.9	0
+111	871	20	0
+111	871	20.1	0
+111	871	20.2	0
+111	871	20.3	0
+111	871	20.4	0
+111	871	20.5	0
+111	871	20.6	0
+111	871	20.7	0
+111	871	20.8	0
+111	871	20.9	0
+111	871	21	0
+111	871	21.1	0
+111	871	21.2	0
+111	871	21.3	0
+111	871	21.4	0
+111	871	21.5	0
+111	871	21.6	0
+111	871	21.7	0
+111	871	21.8	0
+111	871	21.9	0
+111	871	22	0
+111	871	22.1	0
+111	871	22.2	0
+111	871	22.3	0
+111	871	22.4	0
+111	871	22.5	0
+111	871	22.6	0
+111	871	22.7	0
+111	871	22.8	0
+111	871	22.9	0
+111	871	23	0
+111	871	23.1	0
+111	871	23.2	0
+111	871	23.3	0
+111	871	23.4	0
+111	871	23.5	0
+111	871	23.6	0
+111	871	23.7	0
+111	871	23.8	0
+111	871	23.9	0
+111	871	24	0
+111	871	24.1	0
+111	871	24.2	0
+111	871	24.3	0
+111	871	24.4	0
+111	871	24.5	0
+111	871	24.6	0
+111	871	24.7	0
+111	871	24.8	0
+111	871	24.9	0
+111	871	25	0
+111	871	25.1	0
+111	871	25.2	0
+111	871	25.3	0
+111	871	25.4	0
+111	871	25.5	0
+111	871	25.6	0
+111	871	25.7	0
+111	871	25.8	0
+111	871	25.9	0
+111	871	26	0
+111	871	26.1	0
+111	871	26.2	0
+111	871	26.3	0
+111	871	26.4	0
+111	871	26.5	0
+111	871	26.6	0
+111	871	26.7	0
+111	871	26.8	0
+111	871	26.9	0
+111	871	27	0
+111	871	27.1	0
+111	871	27.2	0
+111	871	27.3	0
+111	871	27.4	0
+111	871	27.5	0
+111	871	27.6	0
+111	871	27.7	0
+111	871	27.8	0
+111	871	27.9	0
+111	871	28	0
+111	871	28.1	0
+111	871	28.2	0
+111	871	28.3	0
+111	871	28.4	0
+111	871	28.5	0
+111	871	28.6	0
+111	871	28.7	0
+111	871	28.8	0
+111	871	28.9	0
+111	871	29	0
+111	871	29.1	0
+111	871	29.2	0
+111	871	29.3	0
+111	871	29.4	0
+111	871	29.5	0
+111	871	29.6	0
+111	871	29.7	0
+111	871	29.8	0
+111	871	29.9	0
+111	871	30	0
+111	871	30.1	0
+111	871	30.2	0
+111	871	30.3	0
+111	871	30.4	0
+111	871	30.5	0
+111	871	30.6	0
+111	871	30.7	0
+111	871	30.8	0
+111	871	30.9	0
+111	871	31	0
+111	871	31.1	0
+111	871	31.2	0
+111	871	31.3	0
+111	871	31.4	0
+111	871	31.5	0
+111	871	31.6	0
+111	871	31.7	0
+111	871	31.8	0
+111	871	31.9	0
+111	871	32	0
+111	871	32.1	0
+111	871	32.2	0
+111	871	32.3	0
+111	871	32.4	0
+111	871	32.5	0
+111	871	32.6	0
+111	871	32.7	0
+111	871	32.8	0
+111	871	32.9	0
+111	871	33	0
+111	871	33.1	0
+111	871	33.2	0
+111	871	33.3	0
+111	871	33.4	0
+111	871	33.5	0
+111	871	33.6	0
+111	871	33.7	0
+111	871	33.8	0
+111	871	33.9	0
+111	871	34	0
+111	871	34.1	0
+111	871	34.2	0
+111	871	34.3	0
+111	871	34.4	0
+111	871	34.5	0
+111	871	34.6	0
+111	871	34.7	0
+111	871	34.8	0
+111	871	34.9	0
+111	871	35	0
+111	871	35.1	0
+111	871	35.2	0
+111	871	35.3	0
+111	871	35.4	0
+111	871	35.5	0
+111	871	35.6	0
+111	871	35.7	0
+111	871	35.8	0
+111	871	35.9	0
+111	871	36	0
+111	871	36.1	0
+111	871	36.2	0
+111	871	36.3	0
+111	871	36.4	0
+111	871	36.5	0
+111	871	36.6	0
+111	871	36.7	0
+111	871	36.8	0
+111	871	36.9	0
+111	871	37	0
+111	871	37.1	0
+111	871	37.2	0
+111	871	37.3	0
+111	871	37.4	0
+111	871	37.5	0
+111	871	37.6	0
+111	871	37.7	0
+111	871	37.8	0
+111	871	37.9	0
+111	871	38	0
+111	871	38.1	0
+111	871	38.2	0
+111	871	38.3	0
+111	871	38.4	0
+111	871	38.5	0
+111	871	38.6	0
+111	871	38.7	0
+111	871	38.8	0
+111	871	38.9	0
+111	871	39	0
+111	871	39.1	0
+111	871	39.2	0
+111	871	39.3	0
+111	871	39.4	0
+111	871	39.5	0
+111	871	39.6	0
+111	871	39.7	0
+111	871	39.8	0
+111	871	39.9	0
+111	871	40	0
+111	871	40.1	0
+111	871	40.2	0
+111	871	40.3	0
+111	871	40.4	0
+111	871	40.5	0
+111	871	40.6	0
+111	871	40.7	0
+111	871	40.8	0
+111	871	40.9	0
+111	871	41	0
+111	871	41.1	0
+111	871	41.2	0
+111	871	41.3	0
+111	871	41.4	0
+111	871	41.5	0
+111	871	41.6	0
+111	871	41.7	0
+111	871	41.8	0
+111	871	41.9	0
+111	871	42	0
+111	871	42.1	0
+111	871	42.2	0
+111	871	42.3	0
+111	871	42.4	0
+111	871	42.5	0
+111	871	42.6	0
+111	871	42.7	0
+111	871	42.8	0
+111	871	42.9	0
+111	871	43	0
+111	871	43.1	0
+111	871	43.2	0
+111	871	43.3	0
+111	871	43.4	0
+111	871	43.5	0
+111	871	43.6	0
+111	871	43.7	0
+111	871	43.8	0
+111	871	43.9	0
+111	871	44	0
+111	871	44.1	0
+111	871	44.2	0
+111	871	44.3	0
+111	871	44.4	0
+111	871	44.5	0
+111	871	44.6	0
+111	871	44.7	0
+111	871	44.8	0
+111	871	44.9	0
+111	871	45	0
+111	871	45.1	0
+111	871	45.2	0
+111	871	45.3	0
+111	871	45.4	0
+111	871	45.5	0
+111	871	45.6	0
+111	871	45.7	0
+111	871	45.8	0
+111	871	45.9	0
+111	871	46	0
+111	871	46.1	0
+111	871	46.2	0
+111	871	46.3	0
+111	871	46.4	0
+111	871	46.5	0
+111	871	46.6	0
+111	871	46.7	0
+111	871	46.8	0
+111	871	46.9	0
+111	871	47	0
+111	871	47.1	0
+111	871	47.2	0
+111	871	47.3	0
+111	871	47.4	0
+111	871	47.5	0
+111	871	47.6	0
+111	871	47.7	0
+111	871	47.8	0
+111	871	47.9	0
+111	871	48	0
+111	871	48.1	0
+111	871	48.2	0
+111	871	48.3	0
+111	871	48.4	0
+111	871	48.5	0
+111	871	48.6	0
+111	871	48.7	0
+111	871	48.8	0
+111	871	48.9	0
+111	871	49	0
+111	871	49.1	0
+111	871	49.2	0
+111	871	49.3	0
+111	871	49.4	0
+111	871	49.5	0
+111	871	49.6	0
+111	871	49.7	0
+111	871	49.8	0
+111	871	49.9	0
+111	871	50	0
+111	871	50.1	0
+111	871	50.2	0
+111	871	50.3	0
+111	871	50.4	0
+111	871	50.5	0
+111	871	50.6	0
+111	871	50.7	0
+111	871	50.8	0
+111	871	50.9	0
+111	871	51	0
+111	871	51.1	0
+111	871	51.2	0
+111	871	51.3	0
+111	871	51.4	0
+111	871	51.5	0
+111	871	51.6	0
+111	871	51.7	0
+111	871	51.8	0
+111	871	51.9	0
+111	871	52	0
+111	871	52.1	0
+111	871	52.2	0
+111	871	52.3	0
+111	871	52.4	0
+111	871	52.5	0
+111	871	52.6	0
+111	871	52.7	0
+111	871	52.8	0
+111	871	52.9	0
+111	871	53	0
+111	871	53.1	0
+111	871	53.2	0
+111	871	53.3	0
+111	871	53.4	0
+111	871	53.5	0
+111	871	53.6	0
+111	871	53.7	0
+111	871	53.8	0
+111	871	53.9	0
+111	871	54	0
+111	871	54.1	0
+111	871	54.2	0
+111	871	54.3	0
+111	871	54.4	0
+111	871	54.5	0
+111	871	54.6	0
+111	871	54.7	0
+111	871	54.8	0
+111	871	54.9	0
+111	871	55	0
+111	871	55.1	0
+111	871	55.2	0
+111	871	55.3	0
+111	871	55.4	0
+111	871	55.5	0
+111	871	55.6	0
+111	871	55.7	0
+111	871	55.8	0
+111	871	55.9	0
+111	871	56	0
+111	871	56.1	0
+111	871	56.2	0
+111	871	56.3	0
+111	871	56.4	0
+111	871	56.5	0
+111	871	56.6	0
+111	871	56.7	0
+111	871	56.8	0
+111	871	56.9	0
+111	871	57	0
+111	871	57.1	0
+111	871	57.2	0
+111	871	57.3	0
+111	871	57.4	0
+111	871	57.5	0
+111	871	57.6	0
+111	871	57.7	0
+111	871	57.8	0
+111	871	57.9	0
+111	871	58	0
+111	871	58.1	0
+111	871	58.2	0
+111	871	58.3	0
+111	871	58.4	0
+111	871	58.5	0
+111	871	58.6	0
+111	871	58.7	0
+111	871	58.8	0
+111	871	58.9	0
+111	871	59	0
+111	871	59.1	0
+111	871	59.2	0
+111	871	59.3	0
+111	871	59.4	0
+111	871	59.5	0
+111	871	59.6	0
+111	871	59.7	0
+111	871	59.8	0
+111	871	59.9	0
+111	871	60	0
+111	871	60.1	0
+111	871	60.2	0
+111	871	60.3	0
+111	871	60.4	0
+111	871	60.5	0
+111	871	60.6	0
+111	871	60.7	0
+111	871	60.8	0
+111	871	60.9	0
+111	871	61	0
+111	871	61.1	0
+111	871	61.2	0
+111	871	61.3	0
+111	871	61.4	0
+111	871	61.5	0
+111	871	61.6	0
+111	871	61.7	0
+111	871	61.8	0
+111	871	61.9	0
+111	871	62	0
+111	871	62.1	0
+111	871	62.2	0
+111	871	62.3	0
+111	871	62.4	0
+111	871	62.5	0
+111	871	62.6	0
+111	871	62.7	0
+111	871	62.8	0
+111	871	62.9	0
+111	871	63	0
+111	871	63.1	0
+111	871	63.2	0
+111	871	63.3	0
+111	871	63.4	0
+111	871	63.5	0
+111	871	63.6	0
+111	871	63.7	0
+111	871	63.8	0
+111	871	63.9	0
+111	871	64	0
+111	871	64.1	0
+111	871	64.2	0
+111	871	64.3	0
+111	871	64.4	0
+111	871	64.5	0
+111	871	64.6	0
+111	871	64.7	0
+111	871	64.8	0
+111	871	64.9	0
+111	871	65	0
+111	871	65.1	0
+111	871	65.2	0
+111	871	65.3	0
+111	871	65.4	0
+111	871	65.5	0
+111	871	65.6	0
+111	871	65.7	0
+111	871	65.8	0
+111	871	65.9	0
+111	871	66	0
+111	871	66.1	0
+111	871	66.2	0
+111	871	66.3	0
+111	871	66.4	0
+111	871	66.5	0
+111	871	66.6	0
+111	871	66.7	0
+111	871	66.8	0
+111	871	66.9	0
+111	871	67	0
+111	871	67.1	0
+111	871	67.2	0
+111	871	67.3	0
+111	871	67.4	0
+111	871	67.5	0
+111	871	67.6	0
+111	871	67.7	0
+111	871	67.8	0
+111	871	67.9	0
+111	871	68	0
+111	871	68.1	0
+111	871	68.2	0
+111	871	68.3	0
+111	871	68.4	0
+111	871	68.5	0
+111	871	68.6	0
+111	871	68.7	0
+111	871	68.8	0
+111	871	68.9	0
+111	871	69	0
+111	871	69.1	0
+111	871	69.2	0
+111	871	69.3	0
+111	871	69.4	0
+111	871	69.5	0
+111	871	69.6	0
+111	871	69.7	0
+111	871	69.8	0
+111	871	69.9	0
+111	871	70	0
+111	871	70.1	0
+111	871	70.2	0
+111	871	70.3	0
+111	871	70.4	0
+111	871	70.5	0
+111	871	70.6	0
+111	871	70.7	0
+111	871	70.8	0
+111	871	70.9	0
+111	871	71	0
+111	871	71.1	0
+111	871	71.2	0
+111	871	71.3	0
+111	871	71.4	0
+111	871	71.5	0
+111	871	71.6	0
+111	871	71.7	0
+111	871	71.8	0
+111	871	71.9	0
+111	871	72	0
+111	871	72.1	0
+
