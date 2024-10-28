@@ -1,3 +1,0 @@
-package rondeboschtest;
-
-@license(LGPL);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-10-25 11:18:42 by Eclipse SUMO netedit Version 1.11.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="vType_0" vClass="emergency"/>
+    <vType id="vType_1" vClass="taxi"/>
+    <vType id="vType_2" vClass="bus"/>
+    <route edges="main28b main27b main26b main25b main24b main23b main22b main21b main20b main19b main18b main17b rosendale1a rosendale2a" color="yellow" id="route_0"/>
+    <route edges="4260000#0 4260000#1 152117986#0 152117986#1 main14a main15a main16a main17a -948026960#12 main19a main20a main21a main22a main23a 4765071#0 4765027 1296340845#3 1296340845#4 1296340846 4764988#0 4765012#1" color="yellow" id="route_1"/>
+    <route edges="park7b park6b park5b park4b park3b park2b park1b belmont12b belmont11b belmont10b belmont9b belmont8b belmont7b belmont6b belmont5b belmont4b belmont3b belmont2b belmont1b main15b main14b main13b main12b main11b main10b main9b main8b main7b main6b main5b main4b main3b main2b main1b" color="red" id="route_2"/>
+    <route edges="liesbeek1 liesbeek2a liesbeek3a campground1a campground2a campground3a campground4a campground5a campground6a campground7a campground8a sandown1a glebe1a glebe2a gablesway" color="yellow" id="route_3"/>
+    <route edges="-152165427#1 -152165427#0 -222469597#3 -222469597#2 -222469597#1 -222469597#0 -222469596#0 -4378992#2 -4378992#1 -4378992#0 belmont4b belmont3b belmont2b belmont1b main16a main17a -948026960#12 main19a main20a main21a 4765018#0 4765018#1 4765018#2 4765071#4 4765071#5 4765071#6 4765071#7" color="yellow" id="route_4"/>
+    <vehicle id="vehicle_0" depart="0.00" route="route_0"/>
+    <vehicle id="vehicle_1" depart="0.00" color="green" route="route_1"/>
+    <vehicle id="vehicle_2" type="vType_0" depart="0.00" color="white" route="route_2"/>
+    <vehicle id="vehicle_3" type="vType_1" depart="0.00" route="route_3"/>
+    <vehicle id="vehicle_4" type="vType_2" depart="0.00" color="blue" route="route_4"/>
+</routes>
